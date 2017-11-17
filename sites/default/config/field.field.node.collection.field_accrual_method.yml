@@ -1,0 +1,21 @@
+uuid: cf326d0b-9e42-4524-a420-e9c6cc8e632c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accrual_method
+    - node.type.collection
+  module:
+    - options
+id: node.collection.field_accrual_method
+field_name: field_accrual_method
+entity_type: node
+bundle: collection
+label: 'Accrual Method'
+description: 'Is it Purchase. Donation. Bequest (one, some or all three methods?)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

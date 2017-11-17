@@ -1,0 +1,23 @@
+uuid: 09ab5247-90ff-457f-ba9e-6fba3563978a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - views
+  theme:
+    - rascal
+id: exposedformsearchpage_1
+theme: rascal
+region: search
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:search-page_1'
+settings:
+  id: 'views_exposed_filter_block:search-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility: {  }

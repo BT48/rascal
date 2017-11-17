@@ -1,0 +1,27 @@
+uuid: d44c1020-5497-47ba-8ed1-18bf6f934ed9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_associated_documentation
+    - node.type.collection
+  module:
+    - file
+id: node.collection.field_associated_documentation
+field_name: field_associated_documentation
+entity_type: node
+bundle: collection
+label: 'Associated Documentation'
+description: 'You may have documents related to this collection which you wish to make available online here. All documents must be accessible by URL from your own web server/site. Where possible the URL should link to a PDF. You must consider IPR as you will be confirming responsibility for it below. There are no restrictions on the number of URLs that can be added'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

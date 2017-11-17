@@ -1,0 +1,24 @@
+name: RASCAL
+type: theme
+description: 'Basic theme for RASCAL based on Classy using Bootstrap Grid'
+core: 8.x
+libraries:
+  - rascal/global-styling
+  - rascal/global-scripts
+base theme: classy
+regions:
+  secondary_menu: 'Secondary Menu'
+  header: 'Header'
+  search: 'Search Bar'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  content_front: 'Homepage Content'
+  sidebar: 'Sidebar'
+  slidebar: 'Slidebar for Mobile'
+  footer: 'Footer'
+  footer_bottom: 'Footer Bottom'
+
+libraries:
+  - 'rascal/global-scripts'
+  - 'rascal/fonts'

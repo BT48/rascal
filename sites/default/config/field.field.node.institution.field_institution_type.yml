@@ -1,0 +1,28 @@
+uuid: c2a7d216-0ab1-4da2-82fd-c0330977dd18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_institution_type
+    - node.type.institution
+    - taxonomy.vocabulary.institution_type
+id: node.institution.field_institution_type
+field_name: field_institution_type
+entity_type: node
+bundle: institution
+label: 'Institution Type'
+description: 'Please select from the list provided. This should reflect your primary business and not a unit within it'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      institution_type: institution_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

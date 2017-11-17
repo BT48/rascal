@@ -1,0 +1,23 @@
+uuid: 92253778-b688-4827-8452-b6070ac69af0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_time_start
+    - node.type.collection
+id: node.collection.field_time_start
+field_name: field_time_start
+entity_type: node
+bundle: collection
+label: 'Time Start'
+description: 'Enter the start date in YYYY format. If this is BCE then enter as a minus. For example 45BCE would be entered as "-0045".'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

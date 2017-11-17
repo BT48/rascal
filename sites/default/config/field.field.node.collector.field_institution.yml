@@ -1,0 +1,19 @@
+uuid: e50be696-69a9-4b3c-afb3-23a8a3029018
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_institution
+    - node.type.collector
+id: node.collector.field_institution
+field_name: field_institution
+entity_type: node
+bundle: collector
+label: Institution
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

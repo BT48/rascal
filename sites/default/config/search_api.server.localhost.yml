@@ -1,0 +1,17 @@
+uuid: 00066901-21a0-475d-bb50-a47670e7f7cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: localhost
+name: localhost
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  partial_matches: true
+  autocomplete:
+    suggest_suffix: true
+    suggest_words: true

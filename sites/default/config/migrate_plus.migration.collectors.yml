@@ -1,0 +1,26 @@
+uuid: 9d5c4594-3997-4f95-a315-e32f6a86b6ec
+langcode: en
+status: true
+dependencies: {  }
+id: collectors
+migration_tags: null
+migration_group: null
+label: 'Import Collectors'
+source:
+  plugin: csv
+  path: 'public://import/Collectors.csv'
+  delimiter: ','
+  enclosure: '"'
+  header_row_count: 1
+  keys:
+    - CollectorID
+process:
+  title: CollectorName
+  field_history: CollectorHistory
+  field_role: CollectorRole
+  type:
+    plugin: default_value
+    default_value: collector
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

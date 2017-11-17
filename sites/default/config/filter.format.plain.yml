@@ -1,0 +1,20 @@
+uuid: fd8f8a12-c15a-4f2b-9a82-ed8a44da9792
+langcode: en
+status: true
+dependencies: {  }
+name: Plain
+format: plain
+weight: 0
+filters:
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: true
+    weight: -10
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }

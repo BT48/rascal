@@ -1,0 +1,13 @@
+name: 'JS Callback Handler (examples)'
+description: 'Provides examples on how to use the JS Callback Handler module.'
+type: module
+package: JS Callback Handler
+# core: 8.x
+dependencies:
+  - js
+
+# Information added by Drupal.org packaging script on 2017-03-17
+version: '8.x-3.x-dev'
+core: '8.x'
+project: 'js'
+datestamp: 1489761786

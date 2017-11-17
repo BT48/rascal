@@ -1,0 +1,25 @@
+uuid: eb4e0682-3fd3-4c26-bed1-205da23c1348
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_times_intro
+    - node.type.collection
+  module:
+    - markup
+id: node.collection.field_times_intro
+field_name: field_times_intro
+entity_type: node
+bundle: collection
+label: 'Times Intro'
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings:
+  markup:
+    value: 'Temporal coverage of items in the collection. This could be anything – e.g. 13th & 14th century manuscripts, or it could be 18th century i.e. the items refer to 18th century. Please use this format YYYY Information entered here will not necessarily be the same as the dates given in the next section'
+    format: plain
+field_type: markup

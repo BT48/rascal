@@ -1,0 +1,15 @@
+// Paragraphs
+
+// Basic
+.paragraph--type-basic-text-section {
+	margin-bottom: 40px;
+
+	h2 {
+		margin: 0 0 16px;
+	  font-weight: 600;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}

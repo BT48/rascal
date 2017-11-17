@@ -1,0 +1,26 @@
+customSlideBars:
+  css:
+    theme:
+      css/slidebars.css: {}
+  js:
+    js/customSlideBars.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once 
+    
+customSearchReset:
+  js:
+    js/customSearchReset.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once         
+    
+showHide:
+  js:
+    js/showhide.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once

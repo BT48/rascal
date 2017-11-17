@@ -1,0 +1,24 @@
+uuid: dd237de7-4376-4844-b83a-51e3ba4e2853
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.secondary
+  module:
+    - system
+  theme:
+    - rascal
+id: secondary
+theme: rascal
+region: secondary_menu
+weight: -6
+provider: null
+plugin: 'system_menu_block:secondary'
+settings:
+  id: 'system_menu_block:secondary'
+  label: Secondary
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

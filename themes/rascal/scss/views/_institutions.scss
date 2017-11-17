@@ -1,0 +1,156 @@
+/*
+For instition view
+ */
+
+.view-institutions {
+  .view-header {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0rem 0 4rem;
+    padding: 0;
+  }
+  .form--inline {
+    background-color: $colour-greyLightest;
+    padding: 2rem 4rem;
+    border-bottom: 2px solid $colour-accent-sunflower;
+    margin-bottom: 4rem;
+    @include bp(medium) {
+      display: flex;
+    }
+  }
+  .form-actions,
+  .form-item {
+    margin: 0;
+  }
+  .form-item-country,
+  .form-item-title,
+  .form-item-field-institution-type {
+    margin-bottom: 12px;  
+    width: 100%;
+    
+    @include bp(medium) {
+      width: 27%;
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
+    input {
+      outline: 0;
+
+      &:hover {
+        border-color: $colour-accent-sunflower;
+        outline-color: transparent;
+      }
+      &:focus {
+        outline: 3px solid #ffbf47;
+        outline-offset: -1px;
+        background: $white;
+      }
+    }
+  }
+  .form-actions {
+    flex-grow: 1;
+  }
+  .list {
+    @include bp(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    li {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+// Collection per Institution
+.eva-institution {
+  .views-exposed-form {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0rem 0 4rem;
+    padding: 0;
+
+    .form--inline {
+      background-color: $colour-greyLightest;
+      padding: 16px;
+      border-bottom: 2px solid $colour-accent-sunflower;
+      margin-bottom: 24px;
+      @include bp(medium) {
+        display: flex;
+      }
+    }
+    .form-actions,
+    .form-item {
+      margin: 0;
+    }
+    .form-item-combine,
+    .form-item-field-subjects-target-id,
+    .form-item-field-places-target-id {
+      margin-bottom: 8px;  
+      width: 100%;
+
+      label {
+        display: none;
+      }
+
+      @include bp(medium) {
+        width: 27%;
+        margin-right: 2rem;
+        margin-bottom: 0;
+      }
+    }
+    .form-actions {
+      flex-grow: 1;
+    }
+
+    input,
+    select {
+      height: 44px;
+    }
+
+    input.form-submit {
+      margin-top: 0;
+      line-height: 44px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .view-collections-per-institution {
+    header {
+      background: transparent;
+      height: auto;
+      padding: 16px 0;
+    }
+
+    .entry {
+      border-top: 1px solid $colour-main-clouds;
+      border-bottom: 1px solid $colour-main-clouds;
+      padding: 16px 0;
+      overflow: hidden;
+
+      h2, p {
+        margin: 0;
+        clear: both;
+        @include bp(small) {
+          clear: none;
+        }
+      }
+
+      h2 {
+        margin-bottom: 12px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        filter: grayscale(1);
+        transition: $cubicBezier filter 0.2s;
+      }
+
+      &:hover img {
+        filter: none;
+      }
+    }
+  }
+}

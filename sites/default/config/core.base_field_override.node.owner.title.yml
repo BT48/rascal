@@ -1,0 +1,18 @@
+uuid: ead194df-5978-4789-80b4-6706d1743d0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.owner
+id: node.owner.title
+field_name: title
+entity_type: node
+bundle: owner
+label: 'Owner Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

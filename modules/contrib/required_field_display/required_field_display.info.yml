@@ -1,0 +1,10 @@
+name: Required Field Display
+type: module
+description: Show which fields are required on the manage fields screen
+# core: 8.x
+
+# Information added by Drupal.org packaging script on 2016-05-05
+version: '8.x-1.1'
+core: '8.x'
+project: 'required_field_display'
+datestamp: 1462487940

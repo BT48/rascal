@@ -1,0 +1,26 @@
+uuid: 9bd02cf8-9c6d-482b-be17-92890dc28d70
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - rascal
+_core:
+  default_config_hash: kkISXE1LT2FJEoYnqCrCpeFB-2pmGmMxMklVk7rQcfg
+id: rascal_footer
+theme: rascal
+region: footer
+weight: -5
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Useful Links'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

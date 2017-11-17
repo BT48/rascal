@@ -1,0 +1,21 @@
+uuid: 6e39bc13-158d-4498-b086-2d893403a265
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accrual_policy
+    - node.type.collection
+  module:
+    - options
+id: node.collection.field_accrual_policy
+field_name: field_accrual_policy
+entity_type: node
+bundle: collection
+label: 'Accrual Policy'
+description: 'is it Closed or Open (are you still adding to this collection? If so, then it’s Open)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

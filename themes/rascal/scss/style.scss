@@ -1,0 +1,79 @@
+// style.scss
+
+/*
+ * SASS Architecture:
+ *
+ * base/       - contains global styles, such as resets, typography, colors, etc.
+ * components/ - contains each self-contained component in its own .scss partial
+ * layout/     - contains styling for larger layout components; e.g. nav, header, footer, etc.
+ * utilities/      - contains global mixins, functions, helper selectors, etc.
+ * style.scss   – output file that brings together all of the above part
+ */
+
+/*
+ * NOTE:
+ *
+ *
+ */
+
+
+// Utils
+//@import "../node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "utilities/breakpoints";
+@import "utilities/variables";
+@import "utilities/extends";
+@import "utilities/mixins";
+@import "utilities/normalize";
+@import "utilities/fonts";
+
+// Base
+@import "base/global";
+@import "base/grid";
+@import "base/page";
+@import "base/typography";
+
+// Components
+@import "components/blocks";
+@import "components/buttons";
+@import "components/forms";
+@import "components/pager";
+@import "components/paragraphs";
+@import "components/table";
+@import "components/views";
+@import "components/view-filters";
+
+// Layouts
+@import "layouts/footer";
+@import "layouts/header";
+@import "layouts/node";
+@import "layouts/article";
+@import "layouts/home";
+@import "layouts/search";
+@import "layouts/user";
+@import "layouts/secondary-menu";
+@import "layouts/main-menu";
+@import "layouts/banner";
+@import "layouts/sidebar";
+@import "layouts/region-slidebar";
+
+// Content Types
+@import "content-types/collections";
+@import "content-types/institutions";
+
+// Elements
+@import "elements/mobile-menu";
+@import "elements/sidebar";
+@import "elements/juicebox";
+@import "elements/fields";
+@import "elements/breadcrumbs";
+
+// View Modes
+@import "view-modes/sidebar-collector";
+@import "view-modes/sidebar-location";
+
+// Views
+@import "views/institutions";
+@import "views/glossary";
+
+// Other
+@import "shame";

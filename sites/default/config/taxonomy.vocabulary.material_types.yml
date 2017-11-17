@@ -1,0 +1,9 @@
+uuid: b9e941da-613e-443b-b6f2-f6ddd9a8c88f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Material Types'
+vid: material_types
+description: ''
+hierarchy: 0
+weight: 0

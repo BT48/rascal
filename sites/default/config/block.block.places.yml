@@ -1,0 +1,38 @@
+uuid: cd90c114-f945-4ef0-abb6-a6cd75a5c90b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.places
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - rascal
+third_party_settings:
+  block_class:
+    classes: ''
+id: places
+theme: rascal
+region: sidebar
+weight: -10
+provider: null
+plugin: 'facet_block:places'
+settings:
+  id: 'facet_block:places'
+  label: 'Geographic Coverage'
+  provider: facets
+  label_display: visible
+visibility:
+  other_facet:
+    id: other_facet
+    facets: ''
+    facet_value: ''
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/search\r\n/search*\r\n/search/*"
+    negate: false
+    context_mapping: {  }

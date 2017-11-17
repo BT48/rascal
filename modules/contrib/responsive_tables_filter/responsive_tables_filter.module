@@ -1,0 +1,103 @@
+<?php
+
+/**
+ * @file
+ * Contains responsive_tables_filter.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function responsive_tables_filter_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the responsive_tables_filter module.
+    case 'help.page.responsive_tables_filter':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Make tables in WYSIWYG fields responsive') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function responsive_tables_filter_theme() {
+  $theme = [];
+
+  return $theme;
+}
+
+/**
+ * Implements template_preprocess_views_view_table().
+ *
+ * Adds tablesaw JS when tables present and CSS/JS aggregation is off to table.
+ */
+function responsive_tables_filter_preprocess_views_view_table(&$variables) {
+  // Add tablesaw classes & data attribute.
+  $variables['attributes']['class'][] = 'tablesaw';
+  $variables['attributes']['class'][] = 'tablesaw-stack';
+  $variables['attributes']['data-tablesaw-mode'][] = 'stack';
+
+  $variables['view']->element['#attached']['library'][] = 'responsive_tables_filter/tablesaw-filter';
+}
+
+/**
+ * Business logic for adding classes & attributes to <table> tags.
+ */
+function _responsive_tables_filter_process($text) {
+  // Older versions of libxml always add DOCTYPE, <html>, and <body> tags.
+  // See http://www.php.net/manual/en/libxml.constants.php.
+  // Sometimes, PHP is >= 5.4, but libxml is old enough that the constants are
+  // not defined.
+  static $new_libxml;
+  if (!isset($new_libxml)) {
+    $new_libxml = version_compare(PHP_VERSION, '5.4', '>=') && defined('LIBXML_HTML_NOIMPLIED') && defined('LIBXML_HTML_NODEFDTD');
+  }
+  if ($text != '') {
+    $tables = array();
+    libxml_use_internal_errors(TRUE);
+    // LibXML requires that the html is wrapped in a root node.
+    $text = '<root>' . $text . '</root>';
+    $dom = new DOMDocument();
+    if ($new_libxml) {
+      $dom->loadHTML(mb_convert_encoding($text, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+    }
+    else {
+      $dom->loadHTML(mb_convert_encoding($text, 'HTML-ENTITIES', 'UTF-8'));
+    }
+
+    $tables = $dom->getElementsByTagName('table');
+    // Find all tables in text.
+    if ($tables->length !== 0) {
+      foreach ($tables as $table) {
+        // Find existing class attributes, if any, and append tablesaw class.
+        $existing_classes = $table->getAttribute('class');
+        $new_classes = !empty($existing_classes) ? $existing_classes . ' tablesaw tablesaw-stack' : 'tablesaw tablesaw-stack';
+        $table->setAttribute('class', $new_classes);
+
+        // Force data-tablesaw-mode attribute to be "stack".
+        $table->setAttribute('data-tablesaw-mode', 'stack');
+      }
+      // Get innerHTML of root node.
+      $html = "";
+      foreach ($dom->getElementsByTagName('root')->item(0)->childNodes as $child) {
+        // Re-serialize the HTML.
+        $html .= $dom->saveHTML($child);
+      }
+      // For lower older libxml, use preg_replace to clean up DOCTYPE.
+      if (!$new_libxml) {
+        $html_start = strpos($html, '<html><body>') + 12;
+        $html_length = strpos($html, '</body></html>') - $html_start;
+        $html = substr($html, $html_start, $html_length);
+      }
+
+      return $html;
+    }
+  }
+  return FALSE;
+}

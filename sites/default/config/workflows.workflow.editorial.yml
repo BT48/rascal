@@ -1,0 +1,76 @@
+uuid: bdd13a75-a865-4c5d-a0c1-152b1bfe554f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.collection
+    - node.type.collector
+    - node.type.owner
+    - node.type.page
+  module:
+    - content_moderation
+_core:
+  default_config_hash: Ghgleft8dw4jdQJNdoZgETzr0anBqsDMIdH9KIhHZI8
+id: editorial
+label: 'Editorial workflow'
+states:
+  archived:
+    label: Archived
+    weight: -8
+  draft:
+    label: Draft
+    weight: -10
+  published:
+    label: Published
+    weight: -9
+transitions:
+  archive:
+    label: Archive
+    from:
+      - published
+    to: archived
+    weight: 2
+  archived_draft:
+    label: 'Restore to Draft'
+    from:
+      - archived
+    to: draft
+    weight: 3
+  archived_published:
+    label: Restore
+    from:
+      - archived
+    to: published
+    weight: 4
+  create_new_draft:
+    label: 'Create New Draft'
+    from:
+      - draft
+      - published
+    to: draft
+    weight: 0
+  publish:
+    label: Publish
+    from:
+      - draft
+      - published
+    to: published
+    weight: 1
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      published: false
+      default_revision: true
+    draft:
+      published: false
+      default_revision: false
+    published:
+      published: true
+      default_revision: true
+  entity_types:
+    node:
+      - collection
+      - collector
+      - owner
+      - page

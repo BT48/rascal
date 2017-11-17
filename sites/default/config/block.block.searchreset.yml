@@ -1,0 +1,42 @@
+uuid: b749aecb-4b25-45f2-95f3-7a04ee507d46
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4bbd490f-157c-4529-b50d-ba46e29f7347'
+  module:
+    - block_class
+    - block_content
+    - facets
+    - system
+  theme:
+    - rascal
+third_party_settings:
+  block_class:
+    classes: reset
+id: searchreset
+theme: rascal
+region: sidebar
+weight: -7
+provider: null
+plugin: 'block_content:4bbd490f-157c-4529-b50d-ba46e29f7347'
+settings:
+  id: 'block_content:4bbd490f-157c-4529-b50d-ba46e29f7347'
+  label: 'Search Reset'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  other_facet:
+    id: other_facet
+    facets: ''
+    facet_value: ''
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/search\r\n/search*\r\n/search/*"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,21 @@
+uuid: 3dba41ac-f92b-447e-937c-f5f85e9bf086
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fax
+    - node.type.institution
+  module:
+    - telephone
+id: node.institution.field_fax
+field_name: field_fax
+entity_type: node
+bundle: institution
+label: 'Administrator Fax'
+description: 'Please include international dialling code – e.g. 0044 for UK or 00353 for RoI. Do not include spaces, dashes or brackets between the digits e.g. 00442812345678'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

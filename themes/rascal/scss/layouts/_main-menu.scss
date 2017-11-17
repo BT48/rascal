@@ -1,0 +1,36 @@
+/*
+  Main Menu/region styling
+ */
+header .menu--main {
+  display: none;
+  @include bp(medium) {
+    display: block;
+    position: relative;
+    padding: 0;
+    ul.menu {
+      margin: 0;
+      float: right;
+      li {
+        display: inline-block;
+        float: left;
+      }
+      a {
+        padding: 55px 0 0 5rem;
+        line-height: 1.25;
+        font-size: 1.7rem;
+        color: $colour-accent-wisteria-dark;
+        text-transform: uppercase;
+        display: block;
+        font-weight: 600;
+        @include bp(large) {
+          font-size: 1.9rem;
+        }
+        &:focus,
+        &:hover {
+          text-decoration: none;
+          color: $colour-accent-carrot;
+        }
+      }
+    }
+  }
+}

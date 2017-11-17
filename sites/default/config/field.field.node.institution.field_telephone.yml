@@ -1,0 +1,21 @@
+uuid: 494f1728-16c4-48a7-9ab0-27b0df9cebc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_telephone
+    - node.type.institution
+  module:
+    - telephone
+id: node.institution.field_telephone
+field_name: field_telephone
+entity_type: node
+bundle: institution
+label: 'Administrator Telephone'
+description: 'Please include international dialling code – e.g. 0044 for UK or 00353 for RoI. Do not include spaces, dashes or brackets between the digits e.g. 00442812345678'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

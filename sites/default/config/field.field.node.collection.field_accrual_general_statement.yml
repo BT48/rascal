@@ -1,0 +1,52 @@
+uuid: 8af33203-b0de-4609-8813-bfaffefc684a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accrual_general_statement
+    - node.type.collection
+  module:
+    - better_formats
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+  better_formats:
+    allowed_formats_toggle: 0
+    allowed_formats:
+      basic_html: basic_html
+      plain: plain
+      restricted_html: 0
+      full_html: 0
+    default_order_toggle: 1
+    default_order_wrapper:
+      formats:
+        basic_html:
+          weight: '0'
+        plain:
+          weight: '0'
+        restricted_html:
+          weight: '0'
+        full_html:
+          weight: '1'
+id: node.collection.field_accrual_general_statement
+field_name: field_accrual_general_statement
+entity_type: node
+bundle: collection
+label: 'Accrual General Statement'
+description: 'Sample text from existing descriptions may be used/edited'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

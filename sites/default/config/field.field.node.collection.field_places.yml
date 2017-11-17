@@ -1,0 +1,28 @@
+uuid: f1816267-741d-44c4-ad15-304d7b71ab73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_places
+    - node.type.collection
+    - taxonomy.vocabulary.places
+id: node.collection.field_places
+field_name: field_places
+entity_type: node
+bundle: collection
+label: 'Geographic Coverage'
+description: 'Spatial coverage of items in the collection, this information relates to the geographic area represented by this collection, please give an indication here of the principal geographic area(s) concerned in this collection e.g. Ireland. Africa – please indicate relevant continent/s from the list provided.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      places: places
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

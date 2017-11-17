@@ -1,0 +1,23 @@
+uuid: 726ac450-f837-4ed7-8004-1a26158d611a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_time_end
+    - node.type.collection
+id: node.collection.field_time_end
+field_name: field_time_end
+entity_type: node
+bundle: collection
+label: 'Time End'
+description: 'Enter the end date in YYYY format. If this is BCE then enter as a minus. For example 45BCE would be entered as "-0045".'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

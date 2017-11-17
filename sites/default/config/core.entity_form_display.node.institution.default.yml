@@ -1,0 +1,272 @@
+uuid: 4f1697df-9cda-47fa-a2bc-9c4f7fa50827
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.institution.body
+    - field.field.node.institution.field_access_control
+    - field.field.node.institution.field_address
+    - field.field.node.institution.field_administrator_country
+    - field.field.node.institution.field_combined_address
+    - field.field.node.institution.field_email_address
+    - field.field.node.institution.field_fax
+    - field.field.node.institution.field_featured_media
+    - field.field.node.institution.field_geolocation
+    - field.field.node.institution.field_institution_type
+    - field.field.node.institution.field_logo
+    - field.field.node.institution.field_role
+    - field.field.node.institution.field_telephone
+    - field.field.node.institution.field_web_site
+    - image.style.media_crop_preview
+    - node.type.institution
+  module:
+    - content_moderation
+    - field_group
+    - geolocation
+    - image_widget_crop
+    - link
+    - path
+    - simpleaddress
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_hidden:
+      children:
+        - uid
+        - created
+        - promote
+        - sticky
+        - path
+        - field_combined_address
+      parent_name: ''
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: hidden
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Hidden
+    group_address:
+      children:
+        - field_address
+        - group_admin
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Address
+    group_admin:
+      children:
+        - field_administrator_country
+        - field_geolocation
+      parent_name: group_address
+      weight: 20
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: Admin
+    group_contact_details:
+      children:
+        - field_role
+        - field_email_address
+        - field_web_site
+        - field_telephone
+        - field_fax
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Contact Details'
+    group_content:
+      children:
+        - field_institution_type
+        - body
+        - field_access_control
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Content
+id: node.institution.default
+targetEntityType: node
+bundle: institution
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 6
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_access_control:
+    weight: 10
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_address:
+    weight: 8
+    settings:
+      placeholder_streetAddress: '102, Olive Grove'
+      placeholder_addressLocality: Swindon
+      placeholder_addressRegion: Wiltshire
+      placeholder_postalCode: 'SN25 9RT'
+      placeholder_postOfficeBoxNumber: 'P.O. Box 12345'
+      placeholder_addressCountry: GB
+    third_party_settings: {  }
+    type: simpleaddress_default
+    region: content
+  field_administrator_country:
+    weight: 17
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_combined_address:
+    weight: 18
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_email_address:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_fax:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_geolocation:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+    region: content
+  field_institution_type:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_logo:
+    weight: 15
+    settings:
+      show_crop_area: true
+      show_default_crop: true
+      warn_multiple_usages: true
+      preview_image_style: media_crop_preview
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - media_crop
+        - square
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: image_widget_crop
+    region: content
+  field_role:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_telephone:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_web_site:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden:
+  field_featured_media: true

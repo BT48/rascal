@@ -1,0 +1,149 @@
+// _shame.scss
+// File of issues that need fixed
+
+// Juicebox
+.jb-thm-thumb-selected .jb-thm-thumb-image {
+  color: #F1C40F !important;
+}
+
+
+// Hide Sort By Options
+.form-item-sort-by,
+.form-item-sort-order {
+	display: none !important;
+	width: 0;
+}
+
+.path-search .banner {
+	.form-item-sort-order {
+		label {
+			float: left;
+			height: 52px;
+      line-height: 32px;
+      font-size: 18px;
+      padding: 1rem 2rem;
+      color: $colour-greyText;
+      position: relative;
+      font-weight: 400;
+		}
+
+		select {
+			float: left;
+			width: auto;
+	    height: 54px;
+	    font-style: inherit;
+		}
+	}
+}
+
+// Advanced Search
+.view-search-advanced {
+	.bef-exposed-form {
+		.form--inline {
+			position: relative;
+			padding-top: 160px;
+			@include bp(medium) {
+				padding-top: 84px;
+			}
+
+			.form-item-search-api-fulltext-op {
+		    position: absolute;
+		    top: 72px;
+		    width: 100%;
+		    @include bp(medium) {
+		    	top: 0;
+		    	right: 0;
+			    width: 30%;
+			  }
+
+			  label {
+			  	visibility: hidden;
+			  }
+
+			  .description {
+			  	display: none;
+			  }
+			}
+
+			.form-item-search-api-fulltext {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    @include bp(medium) {
+			    width: 65%;
+			  }
+			}
+		}
+	}
+}
+
+// FAQs
+.faq-title {
+	background: $colour-greyLightest;
+	border-bottom: 2px solid $colour-greyLight;
+	padding: 16px;
+	position: relative;
+	margin-bottom: 0;
+
+	&:after {
+    content: "";
+    border-left: 20px solid $colour-greyDark;
+    border-left-color: rgba($colour-greyDark, 0.4);
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    height: 0;
+    width: 20px;
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+	}
+
+	&.focused {
+		border-bottom-color: $colour-accent-sunflower;
+		margin-bottom: 0;
+
+		&:after {
+			border-top: 20px solid $colour-accent-sunflower;
+    	border-left: 14px solid transparent;
+    	border-right: 14px solid transparent; 
+    	border-bottom: 0;
+    	top: 22px;
+		}
+	}
+
+
+}
+
+.faq-content {
+	display: none;
+	border-bottom: 2px solid $colour-greyLight;
+	padding: 16px;
+}
+
+.faq-title.focused + .faq-content {
+	display: block;
+}
+
+.paragraph .toc-tree {
+	border: none;
+	padding: 8px 0 1px;
+	margin: 0 -16px 24px;
+	background: $colour-greyLightest;
+
+	h3 {
+		display: none;
+	}
+}
+
+.back-to-top {
+	display: none;
+}
+
+.toc-filter h3 {
+	border-bottom: 1px solid $colour-greyLight;
+	margin-bottom: 8px;
+	padding-bottom: 4px;
+}
+

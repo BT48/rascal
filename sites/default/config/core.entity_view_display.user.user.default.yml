@@ -1,0 +1,74 @@
+uuid: 510cd1e0-5ed0-4ab3-980b-7744167669fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col_stacked_fluid
+      library: ds/ds_2col_stacked_fluid
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          header: div
+          left: div
+          right: div
+          footer: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      header:
+        - member_for
+        - moderation_entity_view_1
+      left:
+        - user_institutions_entity_view_1
+        - user_institutions_entity_view_2
+      right:
+        - user_collections_entity_view_1
+        - user_collections_entity_view_2
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  member_for:
+    weight: 0
+    region: header
+    settings: {  }
+    third_party_settings: {  }
+  moderation_entity_view_1:
+    weight: 1
+    region: header
+    settings: {  }
+    third_party_settings: {  }
+  user_collections_entity_view_1:
+    weight: 4
+    region: right
+    settings: {  }
+    third_party_settings: {  }
+  user_collections_entity_view_2:
+    weight: 5
+    region: right
+    settings: {  }
+    third_party_settings: {  }
+  user_institutions_entity_view_1:
+    weight: 2
+    region: left
+    settings: {  }
+    third_party_settings: {  }
+  user_institutions_entity_view_2:
+    weight: 3
+    region: left
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

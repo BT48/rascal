@@ -1,0 +1,29 @@
+uuid: 0fef535a-41df-483a-aa99-9a0e6a2d8609
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2a0fc7e3-0ae7-463e-ac00-eef4de61245c'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - rascal
+third_party_settings:
+  block_class:
+    classes: ''
+id: footeraddress
+theme: rascal
+region: footer
+weight: -7
+provider: null
+plugin: 'block_content:2a0fc7e3-0ae7-463e-ac00-eef4de61245c'
+settings:
+  id: 'block_content:2a0fc7e3-0ae7-463e-ac00-eef4de61245c'
+  label: 'Contact Details'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

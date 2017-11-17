@@ -1,0 +1,23 @@
+uuid: 3c0ef6ff-659e-4064-9be5-22606d8eb4f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_web_site
+    - node.type.institution
+  module:
+    - link
+id: node.institution.field_web_site
+field_name: field_web_site
+entity_type: node
+bundle: institution
+label: 'Web site'
+description: 'Repository home page, please add URL e.g. http://www.example.com and some short descriptive text that will display on the site'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

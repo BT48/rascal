@@ -1,0 +1,32 @@
+uuid: d96177f7-ec44-49ca-ad29-4c04c04db1a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_identifier
+    - node.type.collection
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.collection.field_identifier
+field_name: field_identifier
+entity_type: node
+bundle: collection
+label: Identifier
+description: 'Please enter the Reference or shelf-mark of the collection you will be describing e.g. MS15 this should be very brief, similar to a shelfmark/location ID, classification number or identifying prefix'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

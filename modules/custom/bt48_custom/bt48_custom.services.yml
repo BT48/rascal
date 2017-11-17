@@ -1,0 +1,3 @@
+services:
+    bt48Custom:
+         class: Drupal\bt48Custom\BT48Migrate

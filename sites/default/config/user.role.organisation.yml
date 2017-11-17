@@ -1,0 +1,12 @@
+uuid: 100f3b9e-f900-40cc-9780-9a99499bc998
+langcode: en
+status: true
+dependencies: {  }
+id: organisation
+label: Organisation
+weight: 5
+is_admin: null
+permissions:
+  - 'access media_embed entity browser pages'
+  - 'access media_library entity browser pages'
+  - 'use editorial transition create_new_draft'

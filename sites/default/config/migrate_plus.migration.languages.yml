@@ -1,0 +1,24 @@
+uuid: e7f3856c-8e75-40e0-b915-2fb6f5b77cf6
+langcode: en
+status: true
+dependencies: {  }
+id: languages
+migration_tags:
+  - Languages
+migration_group: null
+label: 'Languages used by collections'
+source:
+  plugin: csv
+  path: 'public://import/Languages.csv'
+  header_row_count: 1
+  keys:
+    - LanguageID
+  fields:
+    LanguageID: 'Unique ID'
+    Language: 'The Language.'
+process:
+  name: Language
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: languages
+migration_dependencies: null

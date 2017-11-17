@@ -1,0 +1,21 @@
+uuid: c93e27a9-bb4e-4705-ae1a-fae21a2c14c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_telephone
+    - node.type.owner
+  module:
+    - telephone
+id: node.owner.field_telephone
+field_name: field_telephone
+entity_type: node
+bundle: owner
+label: Telephone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

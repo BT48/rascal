@@ -1,0 +1,23 @@
+uuid: ae9be7b6-0be2-4c0b-9171-129da7a6704e
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: person
+label: Person
+type: 'canonical_entities:taxonomy_term'
+pattern: 'person/[term:name]'
+selection_criteria:
+  30c5a10e-4d64-443a-81df-4a6596b771d5:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      names: names
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 30c5a10e-4d64-443a-81df-4a6596b771d5
+selection_logic: and
+weight: -5
+relationships: {  }

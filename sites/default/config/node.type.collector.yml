@@ -1,0 +1,17 @@
+uuid: f44c0935-4619-4d6d-aa1f-26755aa47eb3
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Collector
+type: collector
+description: 'Person who has gathered the items of the collection together'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

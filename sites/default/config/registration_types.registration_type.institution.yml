@@ -1,0 +1,17 @@
+uuid: dcc7781f-6418-4d94-9167-1584a6d0686f
+langcode: en
+status: true
+dependencies: {  }
+id: institution
+label: Institution
+enabled: true
+display: register
+custom_path: signup
+tab_title: ''
+roles:
+  organisation: organisation
+  administrator: '0'
+  editor: '0'
+  site_admin: '0'
+page_title: 'Register with RASCAL'
+description: ''

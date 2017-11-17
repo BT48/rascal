@@ -1,0 +1,52 @@
+uuid: 82197583-7ed3-4868-b163-7e12f059ce57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_collection_text
+    - node.type.collection
+  module:
+    - better_formats
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+  better_formats:
+    allowed_formats_toggle: 0
+    allowed_formats:
+      basic_html: basic_html
+      plain: 0
+      restricted_html: 0
+      full_html: 0
+    default_order_toggle: 0
+    default_order_wrapper:
+      formats:
+        basic_html:
+          weight: '0'
+        plain:
+          weight: '0'
+        restricted_html:
+          weight: '0'
+        full_html:
+          weight: '1'
+id: node.collection.field_featured_collection_text
+field_name: field_featured_collection_text
+entity_type: node
+bundle: collection
+label: Summary
+description: 'Please enter a very brief summary of the collection here, there is a character limit of 300 characters so two or three short sentences will be adequate. This information will be displayed in the Featured Collection section on the RASCAL home page. A different collection will be “featured” every time a user lands on that page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

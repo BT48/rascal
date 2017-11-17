@@ -1,0 +1,245 @@
+uuid: 86db7f1d-8579-42eb-ad97-6ffe6293f94d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.collection.field_access_control
+    - field.field.node.collection.field_accrual_general_statement
+    - field.field.node.collection.field_accrual_method
+    - field.field.node.collection.field_accrual_periodicity
+    - field.field.node.collection.field_accrual_policy
+    - field.field.node.collection.field_accumulation_end
+    - field.field.node.collection.field_accumulation_intro
+    - field.field.node.collection.field_accumulation_start
+    - field.field.node.collection.field_associated_collection
+    - field.field.node.collection.field_associated_documentation
+    - field.field.node.collection.field_collection_images
+    - field.field.node.collection.field_collector
+    - field.field.node.collection.field_content_end_int
+    - field.field.node.collection.field_content_intro
+    - field.field.node.collection.field_content_start_int
+    - field.field.node.collection.field_custodial_history
+    - field.field.node.collection.field_description
+    - field.field.node.collection.field_description_or_catalogue
+    - field.field.node.collection.field_featured_collection_text
+    - field.field.node.collection.field_identifier
+    - field.field.node.collection.field_institution_ref
+    - field.field.node.collection.field_languages
+    - field.field.node.collection.field_legal_status
+    - field.field.node.collection.field_material_types
+    - field.field.node.collection.field_name_s_
+    - field.field.node.collection.field_note
+    - field.field.node.collection.field_owner
+    - field.field.node.collection.field_physical_characteristics
+    - field.field.node.collection.field_places
+    - field.field.node.collection.field_strengths
+    - field.field.node.collection.field_subjects
+    - field.field.node.collection.field_time_end
+    - field.field.node.collection.field_time_start
+    - field.field.node.collection.field_times_intro
+    - field.field.node.collection.field_type
+    - image.style.media_crop
+    - node.type.collection
+  module:
+    - ds
+    - image
+    - smart_trim
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_collection_images
+        - node_title
+        - field_institution_ref
+        - field_description
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+id: node.collection.teaser
+targetEntityType: node
+bundle: collection
+mode: teaser
+content:
+  field_collection_images:
+    type: image
+    weight: 0
+    region: ds_content
+    label: hidden
+    settings:
+      image_style: media_crop
+      image_link: ''
+    third_party_settings:
+      ds:
+        ds_limit: '1'
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: div
+            fi-cl: 'col-xs-24 pull-right col-md-8 responsive'
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+  field_description:
+    type: smart_trim
+    weight: 3
+    region: ds_content
+    label: hidden
+    settings:
+      trim_length: '400'
+      trim_type: chars
+      trim_suffix: ' ...'
+      more_link: '0'
+      more_text: More
+      trim_options:
+        text: text
+      more_class: more-link
+      summary_handler: full
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: p
+            fi-cl: ''
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+  field_institution_ref:
+    type: entity_reference_label
+    weight: 2
+    region: ds_content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: h3
+            fi-cl: ''
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  field_access_control: true
+  field_accrual_general_statement: true
+  field_accrual_method: true
+  field_accrual_periodicity: true
+  field_accrual_policy: true
+  field_accumulation_end: true
+  field_accumulation_intro: true
+  field_accumulation_start: true
+  field_associated_collection: true
+  field_associated_documentation: true
+  field_collector: true
+  field_content_end_int: true
+  field_content_intro: true
+  field_content_start_int: true
+  field_custodial_history: true
+  field_description_or_catalogue: true
+  field_featured_collection_text: true
+  field_identifier: true
+  field_languages: true
+  field_legal_status: true
+  field_material_types: true
+  field_name_s_: true
+  field_note: true
+  field_owner: true
+  field_physical_characteristics: true
+  field_places: true
+  field_strengths: true
+  field_subjects: true
+  field_time_end: true
+  field_time_start: true
+  field_times_intro: true
+  field_type: true
+  links: true
+  related_collections_entity_view_1: true
+  related_collections_entity_view_2: true

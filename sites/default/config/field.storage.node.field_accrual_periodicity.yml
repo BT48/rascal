@@ -1,0 +1,33 @@
+uuid: cb2e30da-8b52-48e7-9676-934dca48ca32
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_accrual_periodicity
+field_name: field_accrual_periodicity
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Regular
+    -
+      value: '1'
+      label: Irregular
+    -
+      value: '2'
+      label: Closed
+    -
+      value: '3'
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

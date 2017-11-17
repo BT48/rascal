@@ -1,0 +1,42 @@
+uuid: 1ee279a0-3d6f-4144-8b14-576a51343d78
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f6be0b01-4453-4547-a8c4-0c8f13d6788d'
+  module:
+    - block_class
+    - block_content
+    - facets
+    - system
+  theme:
+    - rascal
+third_party_settings:
+  block_class:
+    classes: col-xs-24
+id: loginlinks
+theme: rascal
+region: content
+weight: -8
+provider: null
+plugin: 'block_content:f6be0b01-4453-4547-a8c4-0c8f13d6788d'
+settings:
+  id: 'block_content:f6be0b01-4453-4547-a8c4-0c8f13d6788d'
+  label: 'Login Links'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  other_facet:
+    id: other_facet
+    facets: ''
+    facet_value: ''
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /user/login
+    negate: false
+    context_mapping: {  }

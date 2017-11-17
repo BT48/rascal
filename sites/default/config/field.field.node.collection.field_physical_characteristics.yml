@@ -1,0 +1,52 @@
+uuid: a4f7b500-1772-4182-8747-84ac9c87dddf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_physical_characteristics
+    - node.type.collection
+  module:
+    - better_formats
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+  better_formats:
+    allowed_formats_toggle: 0
+    allowed_formats:
+      basic_html: basic_html
+      plain: plain
+      restricted_html: 0
+      full_html: 0
+    default_order_toggle: 1
+    default_order_wrapper:
+      formats:
+        basic_html:
+          weight: '-10'
+        restricted_html:
+          weight: '-9'
+        full_html:
+          weight: '-8'
+        plain:
+          weight: '-7'
+id: node.collection.field_physical_characteristics
+field_name: field_physical_characteristics
+entity_type: node
+bundle: collection
+label: 'Physical characteristics'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

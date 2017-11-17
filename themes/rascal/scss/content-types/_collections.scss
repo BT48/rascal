@@ -1,0 +1,237 @@
+
+.node--type-collection {
+
+.view-related-collections {
+  border-bottom: 2px solid $colour-accent-sunflower;
+}
+
+/*
+.view-display-id-entity_view_2 {
+  width: 48%;
+  margin-right: 2%;
+  float: left;
+}
+.view-display-id-entity_view_1 {
+  width: 48%;
+  float: right;
+}
+.field--name-field-associated-collection {
+  width: 48%;
+  float: right;
+  border-bottom: 2px solid $colour-accent-sunflower;
+  margin-top: 3rem;
+  .field__label {
+    background: $colour-greyLightest;
+    padding: 2rem 4rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1;
+  }
+  .field__item {
+    padding: 2rem 4rem;
+  }
+}
+*/
+
+.view-eva {
+  margin-bottom: 2.5em;
+
+  &.view-updated-information {
+    margin-bottom: 0;
+
+    .view-grouping-content {
+      padding-left: 0;
+    }
+  }
+}
+
+.eva-header {
+  background: $colour-greyLightest;
+  outline: 0;
+  border-bottom: 1px solid $colour-greyMedium;
+  border-bottom: rgba($black, 0.1);
+  h3 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin: 0;
+    padding: 2rem;
+    font-family: inherit;
+  }
+}
+
+.view-grouping-content {
+  background: lighten($colour-greyLightest, 3%);
+  padding: 1rem 2rem;
+  @include bp(medium) {
+    column-count: 2;
+  }
+  @include bp(large) {
+    column-count: 3;
+  }
+
+  .views-row {
+    margin-bottom: 8px;
+  }
+}
+
+.field--name-field-associated-collection {
+  border-bottom: 2px solid $colour-accent-sunflower;
+  margin-bottom: 2.5em;
+  .field__label {
+    background: $colour-greyLightest;
+    padding: 2rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin: 0;
+    line-height: 1;
+  }
+  .field__items {
+    padding: 2rem;
+    background: lighten($colour-greyLightest, 3%);
+  }
+}
+
+.view-updated-information {
+  .eva-header {
+    display: none;
+  }
+  .view-grouping-content {
+    column-count: 1;
+  }
+}
+
+}
+
+
+.field--name-field-featured-collection-text {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+.fields--location-identifier {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: $colour-greyMedium;
+
+  .field--name-field-collection-online {
+    display: inline-block;
+  }
+}
+details {
+  border: 0;
+  background: $colour-greyLightest;
+  /* margin: 0 0 0.4em; */
+  border-bottom: 2px solid $colour-accent-sunflower;
+  margin-bottom: 2.5rem;
+  summary {
+    padding: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    outline: 0;
+  }
+  summary::-webkit-details-marker {
+    color: $colour-accent-sunflower;
+    font-size: 150%;
+    float: right;
+  }
+  .details-wrapper {
+    padding: 0.5rem 1.5em 2em;
+    border-top: 1px solid $colour-greyMedium;
+    border-top-color: rgba($black, 0.1);
+    overflow: hidden;
+    .field__label {
+      font-size: 1.4rem;
+    }
+  }
+
+  .field {
+    margin-bottom: 16px;
+  }
+
+  .date {
+    padding-left: 0;
+    .field {
+      display: inline-block;
+    }
+
+    .field + .field:before {
+      content: " - ";
+    }
+  }
+}
+
+// Online access Block
+.block__content {
+  .field--name-field-collection-online {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.6em;
+    margin-top: 0.75em;
+  }
+
+  .field--name-field-collection-link {
+    word-break: break-all;
+  }
+}
+
+// Add To Any - Temporary
+.a2a_kit {
+  clear: both;
+  float: left;
+  display: block;
+  padding: 0 0 32px;
+
+  &:before {
+    content: "Share";
+    display: block;
+    margin-top: 0;
+    text-transform: uppercase;
+    padding: 2rem 4px 8px;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+}
+
+//@todo remove into field utility
+.field--label-inline {
+  display: inline-block;
+  .field__label {
+    line-height: 1;
+  }
+  .field__item {
+    float: left;
+    line-height: 1;
+    padding-right: 2.5rem;
+  }
+}
+
+// Teaser styling
+.node--type-collection.node--view-mode-teaser {
+  padding-bottom: 32px;
+  border-bottom: 2px solid $colour-main-clouds;
+
+  h2 {
+    margin: 24px 0 4px;
+  }
+
+  h3 {
+    margin: 0 0 12px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  img {
+    margin: 8px 0 8px -16px;
+    @include bp(medium) {
+      margin-top: 24px;
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+  }
+}

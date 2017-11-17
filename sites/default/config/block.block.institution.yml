@@ -1,0 +1,34 @@
+uuid: 09cfba5b-d025-41b3-96aa-a250366bf9f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.institution
+  module:
+    - facets
+    - system
+  theme:
+    - rascal
+id: institution
+theme: rascal
+region: sidebar
+weight: -9
+provider: null
+plugin: 'facet_block:institution'
+settings:
+  id: 'facet_block:institution'
+  label: Institution
+  provider: facets
+  label_display: visible
+visibility:
+  other_facet:
+    id: other_facet
+    facets: ''
+    facet_value: ''
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/search\r\n/search*\r\n/search/*"
+    negate: false
+    context_mapping: {  }

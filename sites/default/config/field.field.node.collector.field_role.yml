@@ -1,0 +1,19 @@
+uuid: c4c3f262-b1c2-4f47-8698-80fb8e2d90ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_role
+    - node.type.collector
+id: node.collector.field_role
+field_name: field_role
+entity_type: node
+bundle: collector
+label: Role
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

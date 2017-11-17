@@ -1,0 +1,23 @@
+uuid: d58e36bd-7d19-422e-a78a-2eef13e67dda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_start_int
+    - node.type.collection
+id: node.collection.field_content_start_int
+field_name: field_content_start_int
+entity_type: node
+bundle: collection
+label: 'Content - Start'
+description: 'Enter the start date in YYYY format. If this is BCE then enter as a minus. For example 45BCE would be entered as "-0045".'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

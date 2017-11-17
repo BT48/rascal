@@ -1,0 +1,20 @@
+/**
+ * @file
+ * This file lists the breakpoints that we are going to use in the theme.
+ */
+
+// Mobile
+// May never be used if we are using mobile-first
+$x-small: 1px 768px;
+
+// Small
+// Anything larger than $x-small
+$small: 769px;
+
+// Medium
+// Anything larger than $medium
+$medium: 992px;
+
+// Large
+// Anything larger than $medium
+$large: 1200px;

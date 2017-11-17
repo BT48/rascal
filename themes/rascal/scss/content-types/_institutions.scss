@@ -1,0 +1,49 @@
+.node--type-institution {
+  .field--name-body-summary,
+  .fields--institution-type {
+    font-weight: 600;
+    font-size: 1.6rem;
+  }
+
+  .fields--institution-type {
+    font-size: 18px;
+    color: $colour-main-midnight;
+  }
+  .block__content h2 {
+    font-size: 1.8rem;
+    text-transform: none;
+    margin: 2.4rem 0;
+  }
+  .field--name-field-logo {
+    float: right;
+  }
+
+  .imagery-institution {
+    img {
+      padding-bottom: 16px;
+      max-width: 100%;
+      height: auto;
+      vertical-align: top;
+    }
+  }
+
+  &.node--view-mode-teaser {
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      margin: 0 0 8px;
+    }
+
+    h3 {
+      margin: 0;
+    }
+  }
+  .image-logo-building {
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+}

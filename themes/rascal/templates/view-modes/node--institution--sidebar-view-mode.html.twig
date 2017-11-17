@@ -1,0 +1,29 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+<div{{ attributes.addClass(classes) }}>
+
+  {{ content.field_geolocation }}
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      {{ label }}
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content|without('field_email_address', 'field_telephone', 'field_geolocation' ) }}
+  </div>
+  <div>Telephone: {{ content.field_telephone }}</div>
+  <div>Email: {{ content.field_email_address }}</div>
+</div>

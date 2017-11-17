@@ -1,0 +1,25 @@
+uuid: 61510543-56d8-4fa8-984a-d0bdf3d4d4ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.collector.field_history
+    - field.field.node.collector.field_main_media
+    - field.field.node.collector.field_role
+    - node.type.collector
+  module:
+    - user
+id: node.collector.teaser
+targetEntityType: node
+bundle: collector
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  addtoany: true
+  field_history: true
+  field_main_media: true
+  field_role: true

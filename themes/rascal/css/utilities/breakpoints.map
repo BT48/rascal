@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../../scss/utilities/breakpoints.css",
+	"sources": [
+		"../../scss/utilities/breakpoints.scss"
+	],
+	"sourcesContent": [
+		"/**\n * @file\n * This file lists the breakpoints that we are going to use in the theme.\n */\n\n// Mobile\n// May never be used if we are using mobile-first\n$x-small: 1px 768px;\n\n// Small\n// Anything larger than $x-small\n$small: 769px;\n\n// Medium\n// Anything larger than $medium\n$medium: 992px;\n\n// Large\n// Anything larger than $medium\n$large: 1200px;\n"
+	],
+	"mappings": "AAAA;;;GAGG",
+	"names": []
+}

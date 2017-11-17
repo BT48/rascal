@@ -1,0 +1,36 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+
+  {% if content.field_logo.0 %}
+    <a href="{{ url }}" rel="bookmark">
+      {{ content.field_logo.0 }}
+    </a>
+  {% else %}
+    <a href="{{ url }}" rel="bookmark">
+      <img src="/themes/rascal/images/RASCAL-placeholder.png" alt="Awaiting image" typeof="foaf:Image" class="image-logo-building">
+    </a>
+  {% endif %}
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content |without('field_logo') }}
+  </div>
+
+</article>

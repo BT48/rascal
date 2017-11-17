@@ -1,0 +1,28 @@
+uuid: 2b8b8f35-153e-4325-802e-57d112b1788b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_name_s_
+    - node.type.collection
+    - taxonomy.vocabulary.names
+id: node.collection.field_name_s_
+field_name: field_name_s_
+entity_type: node
+bundle: collection
+label: Name(s)
+description: 'Agent (person or corporate) name(s) associated with items in the collection e.g. Somerville Edith'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      names: names
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,12 @@
+uuid: bbccf519-057f-412d-9f24-30fbb5ccb912
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+_core:
+  default_config_hash: 2_zAJ4HGIGMgAXwo0HK024KecVvG3yamM249daQcInk
+id: media.media_library
+label: 'Media Library'
+targetEntityType: media
+cache: true

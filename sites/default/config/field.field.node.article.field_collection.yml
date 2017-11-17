@@ -1,0 +1,29 @@
+uuid: 9ca282b8-ac28-47fb-8626-2978d4d75270
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_collection
+    - node.type.article
+    - node.type.page
+id: node.article.field_collection
+field_name: field_collection
+entity_type: node
+bundle: article
+label: Collection
+description: 'Link this article to collections with RASCAL that are related to it.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

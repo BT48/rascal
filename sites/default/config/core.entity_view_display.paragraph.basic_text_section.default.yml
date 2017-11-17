@@ -1,0 +1,80 @@
+uuid: c54ef8ac-28c2-4d48-8a28-aba1eedcd6a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.basic_text_section.field_content
+    - field.field.paragraph.basic_text_section.field_headline
+    - paragraphs.paragraphs_type.basic_text_section
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_headline
+        - field_content
+id: paragraph.basic_text_section.default
+targetEntityType: paragraph
+bundle: basic_text_section
+mode: default
+content:
+  field_content:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: ds_content
+  field_headline:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: h2
+            fi-cl: ''
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+    type: string
+    region: ds_content
+hidden: {  }

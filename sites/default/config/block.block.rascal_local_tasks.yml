@@ -1,0 +1,40 @@
+uuid: 6219a14b-e2f9-4512-83f0-33598c917e49
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - rascal
+third_party_settings:
+  block_class:
+    classes: col-xs-24
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: rascal_local_tasks
+theme: rascal
+region: content
+weight: -11
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility:
+  other_facet:
+    id: other_facet
+    facets: ''
+    facet_value: ''
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/user/login\r\n/user/pregister\r\n/user/password\r\n/signup"
+    negate: true
+    context_mapping: {  }

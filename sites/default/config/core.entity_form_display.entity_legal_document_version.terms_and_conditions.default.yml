@@ -1,0 +1,24 @@
+uuid: b01c2bb9-3f5e-42b8-92f6-9f187e67ce5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_legal.document.terms_and_conditions
+    - field.field.entity_legal_document_version.terms_and_conditions.entity_legal_document_text
+  module:
+    - text
+id: entity_legal_document_version.terms_and_conditions.default
+targetEntityType: entity_legal_document_version
+bundle: terms_and_conditions
+mode: default
+content:
+  entity_legal_document_text:
+    type: text_textarea_with_summary
+    weight: 0
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

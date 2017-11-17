@@ -1,0 +1,35 @@
+uuid: f7d16a85-4db0-4164-80d7-32db5706faba
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.institutions
+  module:
+    - block_class
+    - facets
+    - views
+  theme:
+    - rascal
+third_party_settings:
+  block_class:
+    classes: 'featured featured-institution col-md-12'
+id: views_block__institutions_block_1
+theme: rascal
+region: content_front
+weight: -10
+provider: null
+plugin: 'views_block:institutions-block_1'
+settings:
+  id: 'views_block:institutions-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  other_facet:
+    id: other_facet
+    facets: ''
+    facet_value: ''
+    negate: false
+    context_mapping: {  }

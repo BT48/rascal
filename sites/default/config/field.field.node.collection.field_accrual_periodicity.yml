@@ -1,0 +1,21 @@
+uuid: ec76e521-ac4a-41d4-b188-5e27011faa47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accrual_periodicity
+    - node.type.collection
+  module:
+    - options
+id: node.collection.field_accrual_periodicity
+field_name: field_accrual_periodicity
+entity_type: node
+bundle: collection
+label: 'Accrual Periodicity'
+description: 'is it Regular or Irregular or Closed? (do you add to this collection regularly?)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,72 @@
+/****************************************
+  Variables
+*****************************************/
+
+/* 1. Structure
+========================================================================== */
+$spacing: 20px;
+
+/* 2. Text Select
+========================================================================== */
+
+
+
+/* 3. Links
+========================================================================== */
+
+
+
+/* 4. Colors
+========================================================================== */
+$black: #000;
+$white: #fff;
+
+$colour-greyText: #4A4A4A;
+$colour-greyDark: #4A4A4A;
+$colour-greyMedium: #9E9F9E;
+$colour-greyLight: #e0e0e0;
+$colour-greyLightest: #F7F8F9;
+
+$base:  $black;
+$highlight: #97C3BE;
+$lowlight: #6D8891;
+
+
+// Colours
+$colour-main-midnight: #2C3E50;
+$colour-main-pitch: #7F8C8D;
+$colour-main-concrete: #95A5A6;
+$colour-main-silver: #BDC3C7;
+$colour-main-clouds: #ECF0F1;
+
+// Accents
+$colour-accent-wisteria: #8E44AD;
+$colour-accent-wisteria-dark: #66659A;
+$colour-accent-sunflower: #F1C40F;
+$colour-accent-carrot: #E67E22;
+$colour-accent-quotes: #3B7579;
+
+//Links
+$baseLink: $colour-accent-wisteria;
+$hoverLink: $colour-accent-carrot;
+$activeLink: $colour-accent-carrot;
+
+// Overlays
+$colour-image-overlay: #004CA5;
+$colour-image-overlay-alt: #2209B4;
+$colour-image-overlay-alt-2: #095BBB;
+
+
+/* 5. Fonts
+========================================================================== */
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Open+Sans:400,600');
+
+$fontBody: 'Open Sans', sans-serif;
+$fontHeading: 'Fira Sans', sans-serif;
+$fontMono: monospace;
+$fontSans: sans-serif;
+$fontAlt: serif;
+
+/* 6. Easing
+========================================================================== */
+$cubicBezier: cubic-bezier(.39,.01,.2,.98); /* Cubic-bezier is life. */

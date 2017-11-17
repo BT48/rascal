@@ -1,0 +1,151 @@
+uuid: 68d6efbe-54ab-45e1-92ac-5614022b269c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.owner.field_email_address
+    - field.field.node.owner.field_fax
+    - field.field.node.owner.field_history
+    - field.field.node.owner.field_organisation
+    - field.field.node.owner.field_role
+    - field.field.node.owner.field_telephone
+    - node.type.owner
+  module:
+    - content_moderation
+    - field_group
+    - path
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_admin_contact:
+      children:
+        - field_role
+        - field_telephone
+        - field_email_address
+        - field_fax
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Admin Contact'
+    group_hidden:
+      children:
+        - uid
+        - created
+        - promote
+        - sticky
+        - path
+      parent_name: ''
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: hidden
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: HIdden
+id: node.owner.default
+targetEntityType: node
+bundle: owner
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_email_address:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_fax:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_history:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_organisation:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_role:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_telephone:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  path:
+    type: path
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 10
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

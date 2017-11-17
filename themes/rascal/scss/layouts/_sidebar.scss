@@ -1,0 +1,23 @@
+.node--view-mode-sidebar-view-mode {
+  h2 {
+    font-size: 1.8rem;
+    text-transform: none;
+  }
+  .node--read-more {
+    margin: 2rem 0 0;
+    display: block;
+	}
+}
+
+.region-sidebar {
+	.menu-block {
+		background: $colour-greyLightest;
+    margin: 64px 0;
+    font-size: 18px;
+    padding: 16px 0;
+
+    a {
+    	color: $colour-accent-wisteria-dark;
+    }
+	}
+}

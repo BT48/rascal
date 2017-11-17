@@ -1,0 +1,9 @@
+.breadcrumb {
+    padding: 2rem 0;
+ li {
+   &:before {
+     content: '\007c';
+   }
+
+}
+}

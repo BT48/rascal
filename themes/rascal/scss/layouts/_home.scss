@@ -1,0 +1,199 @@
+// _home.scss
+.path-frontpage {
+	.block-views-exposed-filter-blocksearch-page-1 {
+		min-height: 60vh;
+		background: url('../images/hibernica-ewart.jpg') 50% 50% no-repeat;
+		background-size: cover;
+		background-attachment: scroll;
+		text-align: center;
+		display: flex;
+		//align-content: center;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		margin-bottom: 24px;
+
+		&:after {
+			background: rgba($colour-image-overlay, 0.6667);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 100%;
+			width: 100%;
+			content: "";
+		}
+
+		details {
+			display: none;
+			visibility: hidden;
+		}
+
+		form {
+			width: 90%;
+			max-width: 800px;
+			margin: 0 auto;
+			position: relative;
+			z-index: 1;
+
+			.form-item {
+				float: none;
+				margin: 0;
+
+				&:before {
+					content: "Search the RASCAL Database";
+					color: $white;
+					font-size: 24px;
+					margin: 0 auto 24px;
+					display: block;
+					font-weight: 900;
+			    text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+				}
+
+				input {
+					width: 100%;
+					padding: 8px 16px;
+					font-size: 24px;
+					font-weight: 100;
+					font-style: italic;
+					outline: 0;
+					height: 60px;
+					line-height: 44px;
+				}
+
+				input::placeholder,
+				input::-moz-placeholder,
+				input::-ms-input-placeholder,
+				input::-webkit-input-placeholder {
+					visibility: hidden !important;
+					font-size: 16px;
+				}
+			}
+
+			#edit-actions {
+				position: relative;
+				display: inline-block;
+				float: none;
+				margin-top: 40px;
+
+				&:after {
+					position: absolute;
+					top: 14px;
+					right: 24px;
+
+					font-family: 'icomoon' !important;
+					speak: none;
+					font-style: normal;
+					font-weight: normal;
+					font-variant: normal;
+					text-transform: none;
+					line-height: 1;
+					/* Better Font Rendering =========== */
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+
+					content: "\e909";
+					font-size: 24px;
+					color: $colour-greyMedium;
+					color: rgba(0,0,0,0.5);
+
+				}
+				input {
+					-webkit-appearance: none;
+					appearance: none;
+					border: 0;
+					background: $colour-accent-sunflower;
+					color: $colour-greyDark;
+					padding: 12px 72px 12px 24px;
+					font-size: 20px;
+					font-weight: 700;
+					float: none;
+				}
+			}
+		}
+	}
+
+	div.main.container {
+		min-height: auto;
+	}
+}
+
+.region-content-front {
+	margin-bottom: 32px;
+	overflow: hidden;
+
+	// Featured Blocks
+	.featured {
+		margin-bottom: 40px;
+		h2 {
+			text-transform: capitalize;
+			font-size: 20px;
+			margin: 0;
+			font-weight: normal;
+			text-align: center;
+			padding: 16px 16px 24px;
+		}
+
+		.view-content {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+	.slick__slide {
+		padding: 0 16px;
+
+		.slide__caption {
+			padding: 0;
+		}
+
+		h2 {
+			position: absolute;
+			bottom: 0;
+			width: 90%;
+			width: calc(100% - 32px);
+			left: 16px;
+			padding: 0;
+
+			a {
+				background: rgba($colour-image-overlay, 0.73);
+				color: $white;
+				display: block;
+				padding: 32px 48px;
+				outline: 0;
+
+				&:hover,
+				&:focus {
+					background: rgba($colour-image-overlay, 0.9);
+					transition: 0.333s all $cubicBezier;
+					text-decoration: none;
+				}
+			}
+
+			&.slide__title {
+		    left: 0 !important;
+		    width: 100% !important;
+			}
+		}
+	}
+
+	.slick-arrow::before {
+		color: $white;
+		font-size: 32px;
+	}
+
+	.slick-arrow:hover::before {
+		color: $colour-accent-sunflower;
+	}
+
+	
+}

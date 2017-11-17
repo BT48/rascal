@@ -1,0 +1,19 @@
+uuid: d622fd75-b83e-4903-b5ce-879500e44b21
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.owner
+  module:
+    - user
+id: node.owner.teaser
+targetEntityType: node
+bundle: owner
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  addtoany: true

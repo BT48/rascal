@@ -1,0 +1,10 @@
+uuid: 615977fe-d548-4f44-b5cf-e16c9608a109
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sidebar_view_mode
+label: 'Sidebar view mode'
+targetEntityType: node
+cache: true

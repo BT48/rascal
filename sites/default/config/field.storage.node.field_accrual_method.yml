@@ -1,0 +1,30 @@
+uuid: 529ce3a7-25c4-40aa-96e1-51ba5f767e9f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_accrual_method
+field_name: field_accrual_method
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Purchase
+    -
+      value: '1'
+      label: Donation
+    -
+      value: '2'
+      label: Bequest
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

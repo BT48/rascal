@@ -1,0 +1,64 @@
+uuid: fe1984ec-b2e8-4c9a-befb-7a2818c62f4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+id: languages
+name: Languages
+url_alias: languages
+weight: 0
+show_only_one_result: false
+field_identifier: languages
+query_type_name: null
+facet_source_id: 'views_page:search__page_1'
+widget:
+  type: checkbox
+  config:
+    show_numbers: true
+    soft_limit: 5
+query_operator: or
+exclude: false
+only_visible_when_facet_source_is_visible: false
+processor_configs:
+  active_widget_order:
+    processor_id: active_widget_order
+    weights:
+      sort: -10
+    settings:
+      sort: ASC
+  count_limit:
+    processor_id: count_limit
+    weights:
+      build: -10
+    settings:
+      minimum_items: 1
+      maximum_items: null
+  count_widget_order:
+    processor_id: count_widget_order
+    weights:
+      sort: -9
+    settings:
+      sort: DESC
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: -8
+    settings:
+      sort: ASC
+  hide_non_narrowing_result_processor:
+    processor_id: hide_non_narrowing_result_processor
+    weights:
+      build: -10
+    settings: {  }
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: -10
+      build: -10
+    settings: {  }
+empty_behavior:
+  behavior: text
+  text_format: plain_text
+  text: 'Languages filter not available'
+facet_configs: {  }

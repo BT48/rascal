@@ -1,0 +1,23 @@
+uuid: c58ec805-b1b1-45b5-9d81-8d5307dcb0d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+name: square
+label: Square
+effects:
+  75dc1fa3-b962-4c4a-b2f0-0f4fd50e150e:
+    uuid: 75dc1fa3-b962-4c4a-b2f0-0f4fd50e150e
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: square
+  817be9be-3658-471c-ab31-510a3a8f6069:
+    uuid: 817be9be-3658-471c-ab31-510a3a8f6069
+    id: image_scale
+    weight: 2
+    data:
+      width: 640
+      height: 640
+      upscale: false

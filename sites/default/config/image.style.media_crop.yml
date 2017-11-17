@@ -1,0 +1,32 @@
+uuid: 01e4d214-456e-4242-8acf-a351f2a91a50
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+_core:
+  default_config_hash: UPdGXjjn2b8cCoa_RhpJ8X_8wyxmQtL9IspWTiP6PVM
+name: media_crop
+label: Landscape
+effects:
+  39bd5538-f2bc-48a4-b6f2-90ba2175b1eb:
+    uuid: 39bd5538-f2bc-48a4-b6f2-90ba2175b1eb
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: media_crop
+  cc998f47-2aab-4c27-a314-be690c24b64b:
+    uuid: cc998f47-2aab-4c27-a314-be690c24b64b
+    id: image_scale
+    weight: -9
+    data:
+      width: 800
+      height: 450
+      upscale: true
+  6349e0e9-9d84-4e1c-8560-1748c901b5d8:
+    uuid: 6349e0e9-9d84-4e1c-8560-1748c901b5d8
+    id: image_scale_and_crop
+    weight: 3
+    data:
+      width: 800
+      height: 450

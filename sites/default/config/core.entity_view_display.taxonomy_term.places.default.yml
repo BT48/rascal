@@ -1,0 +1,23 @@
+uuid: b768a323-7357-4957-a41b-04d0b6c301ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.places.field_location
+    - taxonomy.vocabulary.places
+  module:
+    - text
+id: taxonomy_term.places.default
+targetEntityType: taxonomy_term
+bundle: places
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_location: true

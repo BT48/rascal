@@ -1,0 +1,9 @@
+default:
+  - streetAddress
+  - addressLocality
+  - addressRegion
+  - postOfficeBoxNumber
+  - postalCode
+  - addressCountry
+_core:
+  default_config_hash: xaIINqdf916uNbHLm64ZnD5lUy-UTslq5GDjCeiJp-k

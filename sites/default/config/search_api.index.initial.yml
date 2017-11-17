@@ -1,0 +1,272 @@
+uuid: d5a2d045-aca5-4b34-930a-15a9c79eea40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - field.storage.node.field_featured_collection_text
+    - field.storage.node.field_collector
+    - field.storage.node.field_institution_ref
+    - field.storage.node.field_languages
+    - field.storage.node.field_material_types
+    - field.storage.node.field_name_s_
+    - field.storage.node.field_owner
+    - field.storage.node.field_places
+    - field.storage.node.field_type
+    - field.storage.node.field_subjects
+    - field.storage.node.field_time_start
+    - field.storage.node.field_content_start_int
+    - field.storage.node.field_accumulation_start
+    - search_api.server.pantheon_solr
+  module:
+    - node
+    - taxonomy
+    - search_api
+id: initial
+name: initial
+description: ''
+read_only: false
+field_settings:
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          collection: default
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+  description:
+    label: 'Description » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_description:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_description
+  summary:
+    label: 'Featured Collection Text » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_featured_collection_text:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_featured_collection_text
+  collector:
+    label: 'Collector » Content » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_collector:entity:title'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_collector
+      module:
+        - node
+  institution:
+    label: 'Institution » Content » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_institution_ref:entity:title'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_institution_ref
+      module:
+        - node
+  languages:
+    label: 'Languages » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_languages:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_languages
+      module:
+        - taxonomy
+  materials:
+    label: 'Material Types » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_material_types:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_material_types
+      module:
+        - taxonomy
+  names:
+    label: 'Name(s) » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_name_s_:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_name_s_
+      module:
+        - taxonomy
+  owner:
+    label: 'Owner » Content » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_owner:entity:title'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_owner
+      module:
+        - node
+  places:
+    label: 'Places » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_places:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_places
+      module:
+        - taxonomy
+  type:
+    label: 'Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_type
+      module:
+        - taxonomy
+  subjects:
+    label: 'Subjects » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_subjects:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_subjects
+      module:
+        - taxonomy
+  time:
+    label: 'Time Start'
+    datasource_id: 'entity:node'
+    property_path: field_time_start
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_time_start
+  content:
+    label: 'Content - Start'
+    datasource_id: 'entity:node'
+    property_path: field_content_start_int
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_content_start_int
+  accumulation:
+    label: 'Accumulation - Start'
+    datasource_id: 'entity:node'
+    property_path: field_accumulation_start
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_accumulation_start
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - collection
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  tokenizer:
+    fields:
+      - rendered_item
+      - title
+      - description
+      - summary
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  add_url: {  }
+  entity_status: {  }
+  rendered_item: {  }
+  transliteration:
+    fields:
+      - rendered_item
+      - title
+      - description
+      - summary
+      - collector
+      - institution
+      - languages
+      - materials
+      - names
+      - owner
+      - places
+      - type
+      - subjects
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  highlight:
+    highlight: always
+    highlight_partial: true
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<b>'
+    suffix: '</b>'
+    weights:
+      postprocess_query: 0
+  html_filter:
+    fields:
+      - rendered_item
+      - title
+      - description
+      - summary
+    title: false
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  ignorecase:
+    fields:
+      - rendered_item
+      - title
+      - description
+      - summary
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  aggregated_field: {  }
+  stemmer:
+    fields:
+      - rendered_item
+      - title
+      - description
+      - summary
+    exceptions:
+      texan: texa
+      mexican: mexic
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+tracker_settings:
+  default: {  }
+options:
+  index_directly: true
+  cron_limit: 50
+server: pantheon_solr

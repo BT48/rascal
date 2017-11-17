@@ -1,0 +1,23 @@
+uuid: 796334f6-71a1-49d7-b96f-629669f3579c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accumulation_start
+    - node.type.collection
+id: node.collection.field_accumulation_start
+field_name: field_accumulation_start
+entity_type: node
+bundle: collection
+label: 'Accumulation - Start'
+description: 'Enter the start date in YYYY format. If this is BCE then enter as a minus. For example 45BCE would be entered as "-0045".'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

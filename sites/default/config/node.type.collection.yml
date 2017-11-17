@@ -1,0 +1,17 @@
+uuid: 9f9bbedd-90c3-467a-977e-102d063cb4a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Collection
+type: collection
+description: '"A Collection containing rare or unique material or those which have attained a critical mass which would make it attractive and perhaps essential for a researcher to visit”. An aggregation of physical and/or electronic items.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

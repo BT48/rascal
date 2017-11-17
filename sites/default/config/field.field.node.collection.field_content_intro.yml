@@ -1,0 +1,25 @@
+uuid: 99223107-f74f-408a-bb8d-e87f74ba4e28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_intro
+    - node.type.collection
+  module:
+    - markup
+id: node.collection.field_content_intro
+field_name: field_content_intro
+entity_type: node
+bundle: collection
+label: 'Content Intro'
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings:
+  markup:
+    value: 'Please use this format YYYY e.g. 1710 this means the documents themselves hail from this period'
+    format: plain
+field_type: markup

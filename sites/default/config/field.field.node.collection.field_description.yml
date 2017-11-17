@@ -1,0 +1,52 @@
+uuid: f2cfaa85-0486-4df5-bf8d-c22e6d5ff34c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.collection
+  module:
+    - better_formats
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+  better_formats:
+    allowed_formats_toggle: 1
+    allowed_formats:
+      basic_html: basic_html
+      full_html: full_html
+      plain: 0
+      restricted_html: 0
+    default_order_toggle: 0
+    default_order_wrapper:
+      formats:
+        basic_html:
+          weight: '0'
+        plain:
+          weight: '0'
+        restricted_html:
+          weight: '0'
+        full_html:
+          weight: '1'
+id: node.collection.field_description
+field_name: field_description
+entity_type: node
+bundle: collection
+label: Description
+description: 'Please enter a summary of the collection here. Although subject specific information can be given, at least part of the description should be understandable by a researcher with no specialist knowledge of the collection. This text should include sufficient information to enable a researcher of any level decide if this collection is relevant to their research interest and if it merits consultation. The description should have relevant information (words and phrases) in the text which can be picked up if used during a KEYWORD search of RASCAL e.g. WWI, traditional, harp, China, travel writing'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

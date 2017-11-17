@@ -1,0 +1,81 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer class="node__meta">
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('node__submitted') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node__content col-sm-16') }} role="main">
+    <div class="fields--location-identifier">
+      <a href="{{ path('entity.node.canonical', {'node': node.field_institution_ref.entity.nid.value }) }}">{{ node.field_institution_ref.entity.title.value  }}</a>
+      {% if content.field_identifier.0 %}
+        | {{ content.field_identifier.0 }}
+      {% endif %}
+      {% if content.field_collection_online.0 is not empty %}
+        | {{ content.field_collection_online }}
+      {% endif %}
+    </div>
+    {{ content|without('field_access_control', 'field_institution_ref', 'field_access_control', 'field_collector', 'field_owner', 'field_identifier', 'field_collection_link' ) }}
+  </div>
+
+
+  <aside class="node__sidebar col-sm-8">
+    {# location #}
+    {% if content.field_institution_ref.0 is not empty %}
+    <div class="block__content">
+      <div class="field__label">Location</div>
+      {{ content.field_institution_ref }}
+    </div>
+    {% endif %}
+
+    {% if content.field_access_control.0 is not empty %}
+    <div class="block__content">
+      {{ content.field_access_control }}
+      {% if content.field_collection_online.0 is not empty %}
+        {{ content.field_collection_online }}
+      {% endif %}
+      {% if content.field_collection_link.0 is not empty %}
+        {{ content.field_collection_link }}
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if content.field_collector.0 is not empty %}
+    <div class="block__content">
+      {{ content.field_collector }}
+    </div>
+    {% endif %}
+
+    {% if content.field_owner.0 is not empty %}
+    <div class="block__content">
+      {{ content.field_owner }}
+    </div>
+    {% endif %}
+
+  </aside>
+
+</article>

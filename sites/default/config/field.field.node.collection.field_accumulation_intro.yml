@@ -1,0 +1,25 @@
+uuid: 312c466b-354d-487f-af36-26847ce83cfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accumulation_intro
+    - node.type.collection
+  module:
+    - markup
+id: node.collection.field_accumulation_intro
+field_name: field_accumulation_intro
+entity_type: node
+bundle: collection
+label: 'Accumulation Intro'
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings:
+  markup:
+    value: 'Please use this format YYYY Over what period of time were the materials collected? e.g. 1920'
+    format: plain
+field_type: markup

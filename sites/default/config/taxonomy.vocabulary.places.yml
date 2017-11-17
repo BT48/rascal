@@ -1,0 +1,9 @@
+uuid: ef4bc167-e2e5-4aeb-bd1d-43c2aa7d2cb8
+langcode: en
+status: true
+dependencies: {  }
+name: Places
+vid: places
+description: ''
+hierarchy: 0
+weight: 0

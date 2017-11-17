@@ -1,0 +1,19 @@
+uuid: 55db1059-9414-4ece-bc5f-1bd51f1ef0b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - markup
+    - node
+id: node.field_accumulation_intro
+field_name: field_accumulation_intro
+entity_type: node
+type: markup
+settings: {  }
+module: markup
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

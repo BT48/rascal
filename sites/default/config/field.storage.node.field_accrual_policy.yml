@@ -1,0 +1,36 @@
+uuid: a79b6809-4e70-4ba1-9dd1-d168af5e9058
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_accrual_policy
+field_name: field_accrual_policy
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Closed
+    -
+      value: '1'
+      label: Open
+    -
+      value: '2'
+      label: Active
+    -
+      value: '3'
+      label: Passive
+    -
+      value: '4'
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

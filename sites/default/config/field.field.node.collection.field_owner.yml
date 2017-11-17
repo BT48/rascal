@@ -1,0 +1,29 @@
+uuid: e28d6eb4-676e-4f2a-8793-45a28e630d5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_owner
+    - node.type.collection
+    - node.type.owner
+id: node.collection.field_owner
+field_name: field_owner
+entity_type: node
+bundle: collection
+label: Owner
+description: 'Agent/Institution with legal ownership of the collection'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      owner: owner
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

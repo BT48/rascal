@@ -1,0 +1,22 @@
+uuid: e6980983-4073-4743-a929-54bc3372cc24
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_legal.document.terms_and_conditions
+    - field.field.entity_legal_document_version.terms_and_conditions.entity_legal_document_text
+  module:
+    - text
+id: entity_legal_document_version.terms_and_conditions.default
+targetEntityType: entity_legal_document_version
+bundle: terms_and_conditions
+mode: default
+content:
+  entity_legal_document_text:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

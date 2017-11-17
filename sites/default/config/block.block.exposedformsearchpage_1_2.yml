@@ -1,0 +1,40 @@
+uuid: df74eb64-3985-4625-84f6-c91671982a14
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - block_class
+    - facets
+    - system
+    - views
+  theme:
+    - rascal
+third_party_settings:
+  block_class:
+    classes: highlight-search
+id: exposedformsearchpage_1_2
+theme: rascal
+region: highlighted
+weight: -11
+provider: null
+plugin: 'views_exposed_filter_block:search-page_1'
+settings:
+  id: 'views_exposed_filter_block:search-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: 'Search the RASCAL database'
+visibility:
+  other_facet:
+    id: other_facet
+    facets: ''
+    facet_value: ''
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

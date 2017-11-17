@@ -1,0 +1,19 @@
+uuid: 5ad1a4c5-3d15-4631-98df-f7814badec7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - markup
+    - node
+id: node.field_times_intro
+field_name: field_times_intro
+entity_type: node
+type: markup
+settings: {  }
+module: markup
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

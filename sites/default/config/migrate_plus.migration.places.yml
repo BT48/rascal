@@ -1,0 +1,24 @@
+uuid: 85cd58df-447b-4f07-9f25-73bc1f1b718e
+langcode: en
+status: true
+dependencies: {  }
+id: places
+migration_tags:
+  - Places
+migration_group: null
+label: 'Places used by collections'
+source:
+  plugin: csv
+  path: 'public://import/GeographicArea.csv'
+  header_row_count: 1
+  keys:
+    - AreaID
+  fields:
+    AreaID: 'Unique ID'
+    Area: 'The Area.'
+process:
+  name: Area
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: places
+migration_dependencies: null

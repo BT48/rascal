@@ -1,0 +1,17 @@
+uuid: a8e8f7fd-fcce-4817-bfa9-885cee666938
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+  module:
+    - user
+_core:
+  default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content: {  }
+hidden:
+  member_for: true

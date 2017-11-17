@@ -1,0 +1,108 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\field\FieldConfigInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Locale;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+
+function bt48_custom_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    
+    if ($form_id == 'node_institution_form' || $form_id == 'node_institution_edit_form') {
+        $form['field_address']['widget'][0]['streetAddress']['#placeholder'] = '';
+        $form['field_address']['widget'][0]['addressLocality']['#placeholder'] = '';
+        $form['field_address']['widget'][0]['addressRegion']['#placeholder'] = '';
+        $form['field_address']['widget'][0]['postalCode']['#placeholder'] = '';
+        $form['field_address']['widget'][0]['postOfficeBoxNumber']['#placeholder'] = '';
+        $form['field_address']['widget'][0]['addressCountry']['#placeholder'] = '';        
+    }
+    
+}
+
+function bt48_custom_page_attachments(array &$page) {
+    $page['#attached']['library'][] = 'bt48_custom/customSlideBars';
+    $page['#attached']['library'][] = 'bt48_custom/customSearchReset';
+    $page['#attached']['library'][] = 'bt48_custom/showHide';
+}
+
+function bt48_custom_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+    $bundle = $entity->bundle();
+    switch ($bundle) {
+        case 'institution':
+            $tid = $entity->field_administrator_country->target_id;
+            $iso = getIsoCode($tid);
+            $entity->field_address->addressCountry = $iso;
+            createCombinedAddress($entity);
+            break;
+        case 'collection':
+            //If referenced institution not published then set moderation state to draft and show message
+            
+            if($entity->moderation_state->value === 'published'){
+                $institution = Node::load($entity->field_institution_ref->target_id);
+                if($institution->status->value == 0){
+                    $entity->moderation_state->value = 'draft';
+                    drupal_set_message(t("This Collection cannot have its moderation state set to published as the referenced Institution '".$institution->title->value."' is not published."), 'warning');
+                }
+                
+            }
+            break;
+    }
+}
+
+function getIsoCode($tid) {
+
+    $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+    $name = $term->label();
+    switch ($name) {
+        case 'England':
+        case 'Northern Ireland':
+        case 'Scotland':
+        case 'Wales':
+            return 'GB';
+            break;
+        default:
+            $countries = Locale\CountryManager::getStandardList();
+            $key = array_search($name, $countries);
+            return $key;
+            break;
+    }
+}
+
+function createCombinedAddress(&$entity) {
+
+    $streetAddress = rtrim(trim($entity->field_address->streetAddress), ',');
+    $addressLocality = rtrim(trim($entity->field_address->addressLocality), ',');
+    $addressRegion = rtrim(trim($entity->field_address->addressRegion), ',');
+    $postalCode = rtrim(trim($entity->field_address->postalCode), ',');
+    $postOfficeBoxNumber = rtrim(trim($entity->field_address->postOfficeBoxNumber), ',');
+    $addressCountry = rtrim(trim($entity->field_address->addressCountry), ',');
+
+    $combinedString = array();
+
+    if (!strlen($streetAddress) == 0) {
+        array_push($combinedString, $streetAddress);
+    }
+
+    if (!strlen($addressLocality) == 0) {
+        array_push($combinedString, $addressLocality);
+    }
+
+    if (!strlen($addressRegion) == 0) {
+        array_push($combinedString, $addressRegion);
+    }
+
+    if (!strlen($postalCode) == 0) {
+        array_push($combinedString, $postalCode);
+    }
+
+    if (!strlen($postOfficeBoxNumber) == 0) {
+        array_push($combinedString, $postOfficeBoxNumber);
+    }
+
+    if (!strlen($addressCountry) == 0) {
+        array_push($combinedString, $addressCountry);
+    }
+
+    $entity->field_combined_address = implode(",",$combinedString);
+}

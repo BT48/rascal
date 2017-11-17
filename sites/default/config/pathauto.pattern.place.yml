@@ -1,0 +1,23 @@
+uuid: d0463ce1-e434-4b61-81c4-9024c7043530
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: place
+label: Place
+type: 'canonical_entities:taxonomy_term'
+pattern: 'place/[term:name]'
+selection_criteria:
+  82e66685-6b38-4979-95d6-ce4d9fda36cb:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      places: places
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 82e66685-6b38-4979-95d6-ce4d9fda36cb
+selection_logic: and
+weight: -5
+relationships: {  }

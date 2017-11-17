@@ -1,0 +1,19 @@
+uuid: d46ae5e0-c9ef-45c3-8c09-6ef8faeb1865
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_description_or_catalogue
+field_name: field_description_or_catalogue
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

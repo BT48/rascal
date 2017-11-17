@@ -1,0 +1,67 @@
+uuid: f2f30462-9e40-4719-a183-68cb3478ba17
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.sidebar_view_mode
+    - field.field.node.owner.field_email_address
+    - field.field.node.owner.field_fax
+    - field.field.node.owner.field_history
+    - field.field.node.owner.field_organisation
+    - field.field.node.owner.field_role
+    - field.field.node.owner.field_telephone
+    - node.type.owner
+  module:
+    - ds
+    - smart_trim
+    - user
+id: node.owner.sidebar_view_mode
+targetEntityType: node
+bundle: owner
+mode: sidebar_view_mode
+content:
+  field_history:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: '400'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      trim_options:
+        text: 0
+      more_class: more-link
+      summary_handler: full
+    third_party_settings:
+      ds:
+        ft:
+          id: minimal
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: smart_trim
+    region: content
+  field_organisation:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_role:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_email_address: true
+  field_fax: true
+  field_telephone: true
+  links: true

@@ -1,0 +1,14 @@
+# core: 8.x
+type: module
+name: Geolocation
+description: 'Provides a simple geolocation field type to store and display location data (lat, lng).'
+package: Geolocation
+dependencies:
+  - field
+configure: geolocation.settings
+
+# Information added by Drupal.org packaging script on 2017-05-11
+version: '8.x-1.10+35-dev'
+core: '8.x'
+project: 'geolocation'
+datestamp: 1494544099

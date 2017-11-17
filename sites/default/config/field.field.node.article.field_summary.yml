@@ -1,0 +1,41 @@
+uuid: 4d4ee27f-818c-4539-bc51-adf685418761
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.article
+  module:
+    - better_formats
+    - text
+third_party_settings:
+  better_formats:
+    allowed_formats_toggle: 1
+    allowed_formats:
+      plain: plain
+      basic_html: 0
+      restricted_html: 0
+      full_html: 0
+    default_order_toggle: 0
+    default_order_wrapper:
+      formats:
+        basic_html:
+          weight: '0'
+        plain:
+          weight: '0'
+        restricted_html:
+          weight: '0'
+        full_html:
+          weight: '1'
+id: node.article.field_summary
+field_name: field_summary
+entity_type: node
+bundle: article
+label: Summary
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,20 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+
+global-scripts:
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/jquery.once
+    - core/drupal
+
+fonts:
+  license:
+    name: SIL Open Font License, 1.1
+    url: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+  css:
+    theme:
+      //fonts.googleapis.com/css?Cutive+Mono|Lato:400,700,900|Open+Sans: { type: external }
+      css/style.css: {}

@@ -1,0 +1,24 @@
+uuid: 8914be26-ede9-4c2a-b5ef-b12e803f9315
+langcode: en
+status: true
+dependencies: {  }
+id: subjects
+migration_tags:
+  - Subjects
+migration_group: null
+label: 'Subjects used by collections'
+source:
+  plugin: csv
+  path: 'public://import/Subjects.csv'
+  header_row_count: 1
+  keys:
+    - SubjectID
+  fields:
+    SubjectID: 'Unique ID'
+    Subject: 'The Subject.'
+process:
+  name: Subject
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: subjects
+migration_dependencies: null

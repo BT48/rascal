@@ -1,0 +1,72 @@
+// _footer.scss
+.region-footer {
+  overflow: hidden;
+  margin: 6rem auto;
+}
+footer.footer {
+  clear: both;
+  background: $colour-main-clouds;
+  border-bottom: 2rem solid $colour-accent-wisteria-dark;
+  color: $colour-accent-wisteria-dark;
+  overflow: hidden;
+
+  .branding {
+    @include bp(medium) {
+      max-width: 25%;
+    }
+    img {
+      max-width: 280px;
+    }
+  }
+
+  .h2,
+  h2 {
+    font-size: 2rem;
+    text-transform: none;
+    line-height: 1.25;
+    margin-top: 0;
+  }
+  ul.menu {
+    margin: 0;
+    columns: 2;
+    @include bp(medium) {
+      columns: 1;
+    }
+    li {
+      line-height: 1.5;
+      padding: 0;
+    }
+  }
+  a {
+    color: $colour-accent-wisteria-dark;
+    &.is-active {
+      color: $colour-accent-carrot;
+    }
+    &:active,
+    &:focus,
+    &:hover {
+      color: $colour-accent-carrot;
+      background: transparent;
+    }
+  }
+  .block-footer-address,
+  .menu--footer {
+    margin-top: 5rem;
+    @include bp(medium) {
+      margin-top: 0;
+    }
+    .field--name-body {
+      position: relative;
+    }
+  }
+  .block-footer-contact {
+    margin-top: 5rem;
+    @include bp(medium) {
+      margin-top: 0;
+    }
+    .field--name-body {
+      position: relative;
+      top: 50px;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+uuid: 0fd521ea-2f0a-4bd5-bd75-0c83da09967e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - facets
+  theme:
+    - rascal
+third_party_settings:
+  block_class:
+    classes: col-xs-24
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: rascal_page_title
+theme: rascal
+region: content
+weight: -12
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  other_facet:
+    id: other_facet
+    facets: ''
+    facet_value: ''
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,23 @@
+uuid: cff31e64-e6f3-402c-a292-c53755593cd7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: featured_institution
+label: 'Featured Institution'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: views
+  handler_settings:
+    view:
+      view_name: er_featured_collection
+      display_name: entity_reference_1
+      arguments: {  }
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: true

@@ -1,0 +1,202 @@
+.banner {
+  clear: both;
+  background: $colour-main-silver;
+  padding: 12px 0;
+  .form-actions.js-form-wrapper {
+    display: inline-block;
+    float: right;
+    margin: 0;
+    width: 56px;
+    @include bp(medium) {
+      width: 160px;
+    }
+    margin-left: 20px;
+    overflow: hidden;
+  }
+  .form--inline {
+    display: flex;
+  }
+  .form--inline .form-item {
+    display: inline-block;
+    float: left;
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  details {
+    background-color: $white;
+    background-color: rgba($white, 0.8);
+    border: 1px solid $colour-main-concrete;
+    border-radius: 0;
+    margin: 0 0 0 16px;
+    &:hover {
+      border-color: $colour-accent-sunflower;
+      outline-color: transparent;
+    }
+    &:focus {
+      outline: 3px solid #ffbf47;
+      outline-offset: -1px;
+      background: $white;
+    }
+
+    summary {
+      height: 52px;
+      line-height: 32px;
+      font-size: 18px;
+      padding: 1rem 3rem 1rem 2rem;
+      color: $colour-main-concrete;
+      position: relative;
+      font-weight: 400;
+      width: 160px;
+    }
+
+    summary::-webkit-details-marker {
+      color: $colour-main-concrete;
+      font-size: 100%;
+      position: absolute;
+      top: 22px;
+      right: 8px;
+    }
+
+    summary[aria-pressed="true"] {
+      outline: 3px solid #ffbf47;
+      outline-offset: -1px;
+      background: $white;
+      color: $black;
+
+      &::-webkit-details-marker {
+        color: $black;
+      }
+    }
+
+    .details-wrapper {
+      position: absolute;
+      margin-left: -2px;
+      margin-top: -1px;
+      border: 3px solid #ffbf47;
+      border-top: 0;
+      background: $white;
+      z-index: 10;
+      width: 164px;
+      padding: 0 1.5em 1em;
+
+      a {
+        color: $colour-main-concrete;
+
+        &:hover,
+        &:focus {
+          color: $black;
+        }
+      }
+
+      .form-item-sort-by,
+      .form-item-sort-order {
+        display: none;
+        visibility: hidden;
+      }
+
+      .bef-link-active a {
+        color: $colour-accent-wisteria;
+        font-weight: bold;
+      }
+    }
+  }
+
+  #edit-actions {
+    position: relative;
+    display: inline-block;
+    background-color: $colour-accent-sunflower;
+
+    /*&:after {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+
+      font-family: 'icomoon' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      content: "\e909";
+      font-size: 24px;
+      color: $colour-greyMedium;
+      color: rgba(0,0,0,0.5);
+      z-index: 0;
+    }*/
+
+    &:focus,
+    &:hover {
+      //background-color: $colour-accent-wisteria;
+      color: $white;
+      font-weight: 500;
+
+      input.form-submit {
+        color: $white;
+      }
+
+      &:after {
+        color: $white;
+      }
+    }
+  }
+
+  a,
+  input,
+  select,
+  textarea {
+    outline: none;
+  }
+
+
+  input.form-submit {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    color: $colour-greyDark;
+    margin-bottom: 0;
+    padding: 12px 0 12px 56px;
+    @include bp(medium) {
+      padding: 12px 16px 12px 16px;
+    }
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  input.form-text {
+    background-color: $white;
+    background-color: rgba($white, 0.8);
+    border: 1px solid $colour-main-concrete;
+    border-radius: 0;
+    padding: 1rem 2rem;
+    width: 100%;
+    color: $colour-greyDark;
+    height: 54px;
+    font-size: 18px;
+    &:hover {
+      border-color: $colour-accent-sunflower;
+      outline-color: transparent;
+    }
+    &:focus {
+      outline: 3px solid #ffbf47;
+      outline-offset: -1px;
+      background: $white;
+    }
+
+    @include placeholder {
+      color: $colour-main-concrete;
+      font-style: italic;
+     }
+
+    input {
+      @include placeholder-theme($ph-styles);
+    }
+
+  }
+}

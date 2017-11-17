@@ -1,0 +1,20 @@
+uuid: 10fb157e-b886-4403-9e88-86f83b3e43a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_embed
+    - media_entity
+_core:
+  default_config_hash: lVM_Y6xGGiamovU2MFJK1F5DTHcB251mxDysO5TbECo
+label: Media
+id: media
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles: {  }
+  display_plugins: {  }
+  entity_browser: media_embed
+  entity_browser_settings:
+    display_review: false
+icon_uuid: 39004672-000c-4b13-af59-838822a4bc5a

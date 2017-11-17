@@ -1,0 +1,29 @@
+uuid: 3a5f038b-23f1-4052-ac8e-7ef5048b4347
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.secondary
+  module:
+    - menu_block
+  theme:
+    - rascal
+id: secondary_2
+theme: rascal
+region: slidebar
+weight: 0
+provider: null
+plugin: 'menu_block:secondary'
+settings:
+  id: 'menu_block:secondary'
+  label: Secondary
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'secondary:'
+  fixed_to_level: false
+  label_type: block
+  suggestion: secondary
+visibility: {  }

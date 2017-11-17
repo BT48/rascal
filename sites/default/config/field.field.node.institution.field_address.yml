@@ -1,0 +1,21 @@
+uuid: 83bea35b-a836-4218-ac9d-8795ec45c9d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.institution
+  module:
+    - simpleaddress
+id: node.institution.field_address
+field_name: field_address
+entity_type: node
+bundle: institution
+label: Address
+description: 'Entering your address is compulsory'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: simpleaddress

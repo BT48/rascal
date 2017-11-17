@@ -1,0 +1,7 @@
+uuid: d85f5677-f366-4d11-b4bf-67a7cf5a8800
+langcode: en
+status: true
+dependencies: {  }
+id: basic_text_section
+label: 'Basic Text Section'
+behavior_plugins: {  }

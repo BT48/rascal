@@ -1,0 +1,34 @@
+<?php
+/**
+ * @file
+ *
+ * Place your custom PHP code in this file.
+ */
+
+ /**
+  * Implements hook_form_alter() to add classes to the search form.
+  */
+
+ /**
+  * Implements hook_form_alter() to add classes to the search form.
+  */
+ function rascal_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+   if ($form['#id'] == 'views-exposed-form-search-page-1') {
+     $form['keywords']['#attributes']['placeholder'] = t('Search the RASCAL database');
+   }
+   if ($form['#id'] == 'views-exposed-form-institutions-page-1') {
+     $form['title']['#attributes']['placeholder'] = t('Institution Name');
+
+     //   $form['country']['#attributes']['placeholder'] = t('Please Select...');
+     $form['country']['#options']['All'] = t('Select Country');
+     // $form['institution-type']['#options']['All'] = t('Type of Institution');
+     $form['field_institution_type']['#options']['All'] = t('Type of Institution');
+   }
+
+   if ($form['#id'] == 'views-exposed-form-collections-per-institution-entity-view-1') {
+     $form['combine']['#attributes']['placeholder'] = t('Keywords');
+     $form['field_subjects_target_id']['#options']['All'] = t('Subject');
+     $form['field_places_target_id']['#options']['All'] = t('Places');
+   }
+
+ }

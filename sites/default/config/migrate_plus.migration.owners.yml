@@ -1,0 +1,29 @@
+uuid: 7a490129-d217-42b7-adf1-944e4f307c76
+langcode: en
+status: true
+dependencies: {  }
+id: owners
+migration_tags: null
+migration_group: null
+label: 'Import Owners'
+source:
+  plugin: csv
+  path: 'public://import/Owners.csv'
+  delimiter: ','
+  enclosure: '"'
+  header_row_count: 1
+  keys:
+    - OwnerID
+process:
+  title: OwnerName
+  field_history: OwnerHistory
+  field_role: OwnerRole
+  field_email_address: OwnerEmail
+  field_fax: OwnerFax
+  field_telephone: OwnerTelephone
+  type:
+    plugin: default_value
+    default_value: owner
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

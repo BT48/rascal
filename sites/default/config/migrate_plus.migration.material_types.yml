@@ -1,0 +1,24 @@
+uuid: e8b368be-68fe-467d-b7f9-24905f9afae4
+langcode: en
+status: true
+dependencies: {  }
+id: material_types
+migration_tags:
+  - 'Material Types'
+migration_group: null
+label: 'Languages used by collections'
+source:
+  plugin: csv
+  path: 'public://import/MediaTypes.csv'
+  header_row_count: 1
+  keys:
+    - MediaTypeID
+  fields:
+    MediaTypeID: 'Unique ID'
+    MediaType: 'The Media Type.'
+process:
+  name: MediaType
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: material_types
+migration_dependencies: null

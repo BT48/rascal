@@ -1,0 +1,32 @@
+uuid: 0f08ecb0-8c45-4fd5-ba12-7b83489e866a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_administrator_country
+    - node.type.institution
+    - taxonomy.vocabulary.institution_countries
+  content:
+    - 'taxonomy_term:institution_countries:ee42feaa-cbc7-43ce-85c5-c857d375c4ec'
+id: node.institution.field_administrator_country
+field_name: field_administrator_country
+entity_type: node
+bundle: institution
+label: 'Administrator Country'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: ee42feaa-cbc7-43ce-85c5-c857d375c4ec
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      institution_countries: institution_countries
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,14 @@
+uuid: c4456416-9008-494c-bfa2-5594208d4320
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 6DM2dOVMVUts1LVtrvm2FhKxTqoK5gH9HOINFk7_BMA
+label: Landscape
+id: media_crop
+description: 'Landscape crop'
+aspect_ratio: '16:9'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

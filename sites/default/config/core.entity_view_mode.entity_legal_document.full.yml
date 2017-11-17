@@ -1,0 +1,12 @@
+uuid: 7a41d5b6-8217-4e8d-a86e-ec331c188dae
+langcode: en
+status: false
+dependencies:
+  module:
+    - entity_legal
+_core:
+  default_config_hash: s_pkVooQXQS-ndYAHs9LZcfNaNejDoLXUFAbSkr7wPM
+id: entity_legal_document.full
+label: Full
+targetEntityType: entity_legal_document
+cache: true

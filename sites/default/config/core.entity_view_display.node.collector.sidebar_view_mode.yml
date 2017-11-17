@@ -1,0 +1,63 @@
+uuid: d01d4d95-f16e-4f1f-8e44-c44bff816bea
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.sidebar_view_mode
+    - field.field.node.collector.field_history
+    - field.field.node.collector.field_institution
+    - field.field.node.collector.field_main_media
+    - field.field.node.collector.field_role
+    - node.type.collector
+  module:
+    - ds
+    - smart_trim
+    - user
+id: node.collector.sidebar_view_mode
+targetEntityType: node
+bundle: collector
+mode: sidebar_view_mode
+content:
+  field_history:
+    type: smart_trim
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      trim_length: '400'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      trim_options:
+        text: 0
+      more_class: more-link
+      summary_handler: full
+    third_party_settings:
+      ds:
+        ft:
+          id: minimal
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_institution:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_role:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_main_media: true
+  links: true

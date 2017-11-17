@@ -1,0 +1,14 @@
+uuid: dd93a5f8-d9a4-4aa9-a759-49a171c5a4d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.site_admin
+  module:
+    - user
+id: user_remove_role_action.site_admin
+label: 'Remove the Site Admin role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: site_admin

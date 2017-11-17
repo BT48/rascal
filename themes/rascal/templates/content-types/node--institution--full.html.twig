@@ -1,0 +1,60 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer class="node__meta">
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('node__submitted') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node__content col-sm-16') }} role="main">
+    <p class="fields--institution-type">{{ content.field_institution_type.0 }}</p>
+    <div class="imagery imagery-institution col-xs-24 col-sm-16 pull-right">
+    {{ content.field_logo.0 }}
+    </div>
+    <p class="field--name-body-summary">{{ content.body['#object'].body.summary }}</p>
+
+    {{ content.body }}
+  </div>
+
+
+  <aside class="node__sidebar col-sm-8">
+    {# location #}
+    <div class="block__content">
+      <div class="field__label label-location">Location</div>
+        {{ content.field_geolocation }}
+        <h2>{{ label }}</h2>
+      <div>{{ content.field_address }}</div>
+      <div>Telephone: {{ content.field_telephone }}</div>
+      <div>Email: {{ content.field_email_address }}</div>
+      <div>Website: {{ content.field_web_site }}</div>
+    </div>
+  </aside>
+
+</article>
+<div class="col-sm-24 eva-institution">
+  <h2 class="inherit">Collections available at {{ label }}</h2>
+  {{ content|without('body', 'field_logo', 'field_institution_type', 'field_address', 'field_telephone', 'field_email_address', 'field_geolocation', 'field_web_site') }}
+</div>

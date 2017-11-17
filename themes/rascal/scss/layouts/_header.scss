@@ -1,0 +1,23 @@
+// _header.scss
+header.header {
+  background: $colour-main-clouds;
+  height: 95px;
+  @include bp(medium) {
+    height: auto;
+  }
+  .branding {
+    padding: 0;
+  }
+  .site-logo img {
+    padding: 16px 0 0;
+    @include bp(medium) {
+      padding: 24px 0 26px;
+      max-width: 286px;
+    }
+    text-align: left;
+    max-width: 256px;
+  }
+}
+.region-header {
+  position: relative;
+}

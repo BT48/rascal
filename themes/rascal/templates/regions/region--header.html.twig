@@ -1,0 +1,16 @@
+{% set classes = [
+  'region', 'region-' ~ region | clean_class,
+  'container'
+] %}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    {{ content }}
+    <div class="mobile-menu">
+      <button class="toggle-id-2 hamburger hamburger--collapse hamburger--accessible js-hamburger" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,73 @@
+uuid: 6765f185-5e6f-442f-aae6-4859ac872a01
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.institution.body
+    - field.field.node.institution.field_access_control
+    - field.field.node.institution.field_address
+    - field.field.node.institution.field_administrator_country
+    - field.field.node.institution.field_combined_address
+    - field.field.node.institution.field_email_address
+    - field.field.node.institution.field_fax
+    - field.field.node.institution.field_featured_media
+    - field.field.node.institution.field_geolocation
+    - field.field.node.institution.field_institution_type
+    - field.field.node.institution.field_logo
+    - field.field.node.institution.field_role
+    - field.field.node.institution.field_telephone
+    - field.field.node.institution.field_web_site
+    - image.style.media_crop
+    - node.type.institution
+  module:
+    - image
+    - smart_trim
+    - user
+id: node.institution.teaser
+targetEntityType: node
+bundle: institution
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: '300'
+      trim_type: chars
+      trim_suffix: ' ...'
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  field_logo:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: media_crop
+      image_link: content
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  collections_per_institution_entity_view_1: true
+  collections_per_institution_entity_view_1_form: true
+  field_access_control: true
+  field_address: true
+  field_administrator_country: true
+  field_combined_address: true
+  field_email_address: true
+  field_fax: true
+  field_featured_media: true
+  field_geolocation: true
+  field_institution_type: true
+  field_role: true
+  field_telephone: true
+  field_web_site: true
+  links: true

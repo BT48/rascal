@@ -1,0 +1,43 @@
+uuid: ee74f22a-3af5-41a4-ac98-d165c0dbb075
+langcode: en
+status: true
+dependencies: {  }
+id: institutions
+migration_tags: null
+migration_group: null
+label: 'Import Locations as Institutions'
+source:
+  plugin: csv
+  path: 'public://import/Locations.csv'
+  delimiter: ','
+  enclosure: '"'
+  header_row_count: 1
+  keys:
+    - LocationID
+process:
+  title: LocationName
+  field_access_control: LocationAccess
+  field_address/0/streetAddress:
+    plugin: concat
+    source:
+      - LocationAddress1
+      - LocationAddress2
+      - LocationAddress3
+    delimiter: ' '
+  field_address/0/addressLocality: LocationCity
+  field_address/0/addressRegion: LocationCounty
+  field_address/0/postalCode: LocationPostcode
+  field_address/0/addressCountry: LocationCountry
+  field_institution_type: LocationType
+  field_fax: AdministratorFax
+  field_administrator_country: Country
+  field_email_address: AdministratorEmail
+  field_role: AdministratorRole
+  field_telephone: AdministratorPhone
+  field_web_site: LocationWebsite
+  type:
+    plugin: default_value
+    default_value: institution
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

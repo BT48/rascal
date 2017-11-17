@@ -1,0 +1,126 @@
+uuid: 4b95b087-779f-43a6-8abf-68dd791cc8fd
+langcode: en
+status: true
+dependencies: {  }
+id: collection_node
+migration_tags: null
+migration_group: null
+label: 'Import Collection'
+source:
+  plugin: csv
+  path: 'public://import/Collections.csv'
+  delimiter: ','
+  enclosure: '"'
+  header_row_count: 1
+  keys:
+    - CollectionID
+process:
+  title: Title
+  field_description: Description
+  field_identifier: Identifier
+  field_strengths: Strengths
+  field_access_control: AccessControl
+  field_accrual_general_statement: AccrualGenStatement
+  field_accrual_method:
+    -
+      delimiter: ;
+      limit: 10
+      plugin: explode
+      source: AccrualMethod
+    -
+      plugin: setAccrualMethod
+  field_accrual_periodicity:
+    plugin: setAccrualPeriodicity
+    source: AccrualPeriodicity
+  field_accrual_policy:
+    plugin: setAccrualPolicy
+    source: AccrualPolicy
+  field_accumulation_end: AccumulationDateEnd
+  field_accumulation_start: AccumulationDateStart
+  field_content_end_int: ContentsDateEnd
+  field_content_start_int: ContentsDateStart
+  field_custodial_history: CustodialHistory
+  field_description_or_catalogue: DescriptionOrCatalogue
+  field_featured_collection_text: FeaturedText
+  field_institution_ref:
+    plugin: migration
+    migration: institutions
+    source: LocationID
+  field_legal_status: LegalStatus
+  field_note: CollectionNotes
+  field_owner:
+    plugin: migration
+    migration: owners
+    source: OwnerID
+  field_physical_characteristics: PhysicalCharacteristics
+  field_time_end: CollectionTemporalEnd
+  field_time_start: CollectionTemporalStart
+  field_collector:
+    -
+      delimiter: ','
+      limit: 1000
+      plugin: explode
+      source: collector_ids
+    -
+      migration: collectors
+      plugin: migration
+  field_languages:
+    -
+      delimiter: ','
+      limit: 1000
+      plugin: explode
+      source: language_ids
+    -
+      migration: languages
+      plugin: migration
+  field_name_s_:
+    -
+      delimiter: ','
+      limit: 1000
+      plugin: explode
+      source: name_ids
+    -
+      migration: agentnames
+      plugin: migration
+  field_subjects:
+    -
+      delimiter: ','
+      limit: 1000
+      plugin: explode
+      source: subject_ids
+    -
+      migration: subjects
+      plugin: migration
+  field_material_types:
+    -
+      delimiter: ','
+      limit: 1000
+      plugin: explode
+      source: media_ids
+    -
+      migration: material_types
+      plugin: migration
+  field_places:
+    -
+      delimiter: ','
+      limit: 1000
+      plugin: explode
+      source: area_ids
+    -
+      migration: places
+      plugin: migration
+  field_associated_collection:
+    -
+      delimiter: ','
+      limit: 1000
+      plugin: explode
+      source: asscociated_ids
+    -
+      migration: collection_node
+      plugin: migration
+  type:
+    plugin: default_value
+    default_value: collection
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

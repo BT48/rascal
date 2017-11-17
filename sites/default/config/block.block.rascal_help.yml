@@ -1,0 +1,22 @@
+uuid: 3f4b17b1-e806-4c32-a054-ddaf9b533eae
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - rascal
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: rascal_help
+theme: rascal
+region: content
+weight: -13
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

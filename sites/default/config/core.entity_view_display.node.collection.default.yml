@@ -1,0 +1,488 @@
+uuid: 7b079498-a359-4f5c-b33d-a9e33894eaa5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.collection.field_access_control
+    - field.field.node.collection.field_accrual_general_statement
+    - field.field.node.collection.field_accrual_method
+    - field.field.node.collection.field_accrual_periodicity
+    - field.field.node.collection.field_accrual_policy
+    - field.field.node.collection.field_accumulation_end
+    - field.field.node.collection.field_accumulation_intro
+    - field.field.node.collection.field_accumulation_start
+    - field.field.node.collection.field_associated_collection
+    - field.field.node.collection.field_associated_documentation
+    - field.field.node.collection.field_collection_images
+    - field.field.node.collection.field_collector
+    - field.field.node.collection.field_content_end_int
+    - field.field.node.collection.field_content_intro
+    - field.field.node.collection.field_content_start_int
+    - field.field.node.collection.field_custodial_history
+    - field.field.node.collection.field_description
+    - field.field.node.collection.field_description_or_catalogue
+    - field.field.node.collection.field_featured_collection_text
+    - field.field.node.collection.field_identifier
+    - field.field.node.collection.field_institution_ref
+    - field.field.node.collection.field_languages
+    - field.field.node.collection.field_legal_status
+    - field.field.node.collection.field_material_types
+    - field.field.node.collection.field_name_s_
+    - field.field.node.collection.field_note
+    - field.field.node.collection.field_owner
+    - field.field.node.collection.field_physical_characteristics
+    - field.field.node.collection.field_places
+    - field.field.node.collection.field_strengths
+    - field.field.node.collection.field_subjects
+    - field.field.node.collection.field_time_end
+    - field.field.node.collection.field_time_start
+    - field.field.node.collection.field_times_intro
+    - field.field.node.collection.field_type
+    - node.type.collection
+  module:
+    - ds
+    - field_group
+    - file
+    - juicebox
+    - options
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_detailed_information_on_hi:
+      children:
+        - field_legal_status
+        - field_custodial_history
+        - field_note
+        - group_accrual
+        - field_associated_documentation
+      parent_name: ''
+      weight: 12
+      format_type: details
+      format_settings:
+        label: 'Detailed Information'
+        id: ''
+        classes: ''
+        open: false
+      label: 'Detailed Information'
+    group_collection_dates:
+      children:
+        - group_created
+        - group_collected
+        - group_coverage
+      parent_name: ''
+      weight: 13
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: 'Collection Dates'
+    group_accrual:
+      children:
+        - field_accrual_policy
+        - field_accrual_method
+        - field_accrual_periodicity
+        - field_accrual_general_statement
+      parent_name: group_detailed_information_on_hi
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: true
+        label_element: h5
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Accrual
+    group_categorisation:
+      children:
+        - field_subjects
+        - field_material_types
+        - field_languages
+        - field_type
+        - field_name_s_
+        - field_places
+      parent_name: ''
+      weight: 11
+      format_type: details
+      format_settings:
+        id: ''
+        classes: categorisation
+        open: false
+        required_fields: false
+      label: Categorisation
+    group_collected:
+      children:
+        - field_accumulation_start
+        - field_accumulation_end
+      parent_name: group_collection_dates
+      weight: 2
+      format_type: html_element
+      format_settings:
+        label: Collected
+        element: div
+        show_label: true
+        label_element: h4
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'collected date col-xs-24 col-md-8'
+      label: Collected
+    group_coverage:
+      children:
+        - field_content_start_int
+        - field_content_end_int
+      parent_name: group_collection_dates
+      weight: 3
+      format_type: html_element
+      format_settings:
+        label: Coverage
+        element: div
+        show_label: true
+        label_element: h4
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'coverage date col-xs-24 col-md-8'
+      label: Coverage
+    group_created:
+      children:
+        - field_time_start
+        - field_time_end
+      parent_name: group_collection_dates
+      weight: 1
+      format_type: html_element
+      format_settings:
+        label: Created
+        element: div
+        show_label: true
+        label_element: h4
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'created date col-xs-24 col-md-8'
+      label: Created
+id: node.collection.default
+targetEntityType: node
+bundle: collection
+mode: default
+content:
+  addtoany:
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  content_moderation_control:
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_access_control:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_accrual_general_statement:
+    weight: 24
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_accrual_method:
+    weight: 22
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_accrual_periodicity:
+    weight: 23
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_accrual_policy:
+    weight: 21
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_accumulation_end:
+    weight: 30
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_accumulation_start:
+    weight: 29
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_associated_collection:
+    weight: 17
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_associated_documentation:
+    weight: 27
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_collection_images:
+    weight: 6
+    label: hidden
+    settings:
+      image_style: juicebox_large
+      thumb_style: thumbnail
+      caption_source: alt
+      title_source: ''
+      jlib_galleryWidth: 437px
+      jlib_galleryHeight: 400px
+      jlib_backgroundColor: '#ECF0F1'
+      jlib_textColor: 'rgba(255,255,255,1)'
+      jlib_thumbFrameColor: 'rgba(255,255,255,.5)'
+      jlib_showExpandButton: true
+      jlib_useFullscreenExpand: '1'
+      jlib_useThumbDots: true
+      manual_config: ''
+      incompatible_file_action: show_icon_and_link
+      linkurl_source: ''
+      linkurl_target: _blank
+      custom_parent_classes: ''
+      jlib_showOpenButton: false
+      jlib_showThumbsButton: false
+      apply_markup_filter: true
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: minimal
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: juicebox_formatter
+    region: content
+  field_collector:
+    weight: 2
+    label: above
+    settings:
+      view_mode: sidebar_view_mode
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_content_end_int:
+    weight: 32
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_content_start_int:
+    weight: 31
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_custodial_history:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_description:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_description_or_catalogue:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_featured_collection_text:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_identifier:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_institution_ref:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: sidebar_view_mode
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_languages:
+    weight: 14
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_legal_status:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_material_types:
+    weight: 13
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_name_s_:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_note:
+    weight: 17
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_owner:
+    weight: 3
+    label: above
+    settings:
+      view_mode: sidebar_view_mode
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_physical_characteristics:
+    weight: 9
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_places:
+    weight: 17
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_strengths:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_subjects:
+    weight: 12
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_time_end:
+    weight: 28
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_time_start:
+    weight: 27
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_type:
+    weight: 15
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  related_collections_entity_view_1:
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  related_collections_entity_view_2:
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  updated_information_entity_view_1:
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_accumulation_intro: true
+  field_content_intro: true
+  field_times_intro: true

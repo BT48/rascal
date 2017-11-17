@@ -1,0 +1,29 @@
+uuid: 0688cb5a-9e71-4e95-9340-21f32c513c36
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.featured_institution
+id: entity_subqueue.featured_institution.default
+targetEntityType: entity_subqueue
+bundle: featured_institution
+mode: default
+content:
+  items:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

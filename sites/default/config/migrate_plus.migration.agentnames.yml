@@ -1,0 +1,24 @@
+uuid: 6b6a16f2-e200-4c12-8e5b-87df2b89bc2d
+langcode: en
+status: true
+dependencies: {  }
+id: agentnames
+migration_tags:
+  - 'Agent Name'
+migration_group: null
+label: 'Agent Names used by collections'
+source:
+  plugin: csv
+  path: 'public://import/agentnames.csv'
+  header_row_count: 1
+  keys:
+    - NameID
+  fields:
+    NameID: 'Unique ID'
+    AgentName: 'The Agents Name.'
+process:
+  name: AgentName
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: names
+migration_dependencies: null

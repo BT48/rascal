@@ -1,0 +1,42 @@
+uuid: d87918d0-7132-4fe2-91f2-0ba4445d88b4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:9102ef18-8fc2-493b-b536-3b23be11eda0'
+  module:
+    - block_class
+    - block_content
+    - facets
+    - system
+  theme:
+    - rascal
+third_party_settings:
+  block_class:
+    classes: reorder
+id: reorderyourresults
+theme: rascal
+region: sidebar
+weight: -14
+provider: null
+plugin: 'block_content:9102ef18-8fc2-493b-b536-3b23be11eda0'
+settings:
+  id: 'block_content:9102ef18-8fc2-493b-b536-3b23be11eda0'
+  label: 'Reorder your results'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  other_facet:
+    id: other_facet
+    facets: ''
+    facet_value: ''
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/search\r\n/search*\r\n/search/*"
+    negate: false
+    context_mapping: {  }

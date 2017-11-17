@@ -1,0 +1,5 @@
+name: BT48 Custom Module
+description: 'Useful libraries and jquery snippets'
+type: module
+package: BT48
+core: 8.x

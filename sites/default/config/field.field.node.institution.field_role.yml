@@ -1,0 +1,19 @@
+uuid: 548910ff-b302-495b-9b84-6e578954a975
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_role
+    - node.type.institution
+id: node.institution.field_role
+field_name: field_role
+entity_type: node
+bundle: institution
+label: 'Administrator Role'
+description: 'This is a free-text field, please use the appropriate role e.g. Librarian, Archivist or Curator'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

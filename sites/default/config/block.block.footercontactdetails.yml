@@ -1,0 +1,25 @@
+uuid: b9225bf7-ea53-4035-9a2c-05335fd88f7b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4bbe5dd5-6128-471f-9069-5469e48571ee'
+  module:
+    - block_content
+  theme:
+    - rascal
+id: footercontactdetails
+theme: rascal
+region: footer
+weight: -6
+provider: null
+plugin: 'block_content:4bbe5dd5-6128-471f-9069-5469e48571ee'
+settings:
+  id: 'block_content:4bbe5dd5-6128-471f-9069-5469e48571ee'
+  label: 'Footer Contact Details'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
