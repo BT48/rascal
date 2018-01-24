@@ -24,6 +24,7 @@ third_party_settings:
     allowed_formats_toggle: 0
     allowed_formats:
       basic_html: basic_html
+      faq: 0
       plain: 0
       restricted_html: 0
       full_html: 0
@@ -32,18 +33,20 @@ third_party_settings:
       formats:
         basic_html:
           weight: '0'
-        plain:
-          weight: '3'
+        faq:
+          weight: '0'
         restricted_html:
           weight: '1'
         full_html:
           weight: '2'
+        plain:
+          weight: '3'
 id: node.collection.field_description_or_catalogue
 field_name: field_description_or_catalogue
 entity_type: node
 bundle: collection
 label: 'Description or Catalogue'
-description: 'A listing or catalogue that describes the current collection e.g. The BBC NI Radio Catalogue (1993). URLs can be provided here if appropriate.'
+description: 'A listing or catalogue that describes the current collection e.g. The BBC NI Radio Catalogue (1993). URLs can be provided here if appropriate. '
 required: false
 translatable: false
 default_value: {  }

@@ -20,6 +20,6 @@ default_value:
 default_value_callback: ''
 settings:
   markup:
-    value: 'Please use this format YYYY e.g. 1710 this means the documents themselves hail from this period'
+    value: "In what time period were the materials in the collection produced? \r\nPlease use this format YYYY"
     format: plain
 field_type: markup

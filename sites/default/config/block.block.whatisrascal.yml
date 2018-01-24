@@ -1,0 +1,30 @@
+uuid: e4b839aa-741e-4a77-86e4-63a1af9a21cc
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:305ab6ae-45e2-4d5d-942c-eecf9623745a'
+  module:
+    - block_class
+    - block_content
+    - facets
+  theme:
+    - rascal
+third_party_settings:
+  block_class:
+    classes: 'col-xs-24 text-center intro-block'
+id: whatisrascal
+theme: rascal
+region: content_front
+weight: -15
+provider: null
+plugin: 'block_content:305ab6ae-45e2-4d5d-942c-eecf9623745a'
+settings:
+  id: 'block_content:305ab6ae-45e2-4d5d-942c-eecf9623745a'
+  label: 'What is RASCAL?'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

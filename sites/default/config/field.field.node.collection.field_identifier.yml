@@ -23,7 +23,7 @@ field_name: field_identifier
 entity_type: node
 bundle: collection
 label: Identifier
-description: 'Please enter the Reference or shelf-mark of the collection you will be describing e.g. MS15 this should be very brief, similar to a shelfmark/location ID, classification number or identifying prefix'
+description: 'Enter the local Reference or shelf-mark of the collection you are describing e.g. MS15 It should be very brief, similar to a shelfmark or location ID, classification number or identifying prefix e.g. h/     '
 required: true
 translatable: false
 default_value: {  }

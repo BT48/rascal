@@ -27,12 +27,6 @@ settings:
   label_display: visible
   views_label: 'Search the RASCAL database'
 visibility:
-  other_facet:
-    id: other_facet
-    facets: ''
-    facet_value: ''
-    negate: false
-    context_mapping: {  }
   request_path:
     id: request_path
     pages: '<front>'

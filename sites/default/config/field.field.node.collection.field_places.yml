@@ -11,7 +11,7 @@ field_name: field_places
 entity_type: node
 bundle: collection
 label: 'Geographic Coverage'
-description: 'Spatial coverage of items in the collection, this information relates to the geographic area represented by this collection, please give an indication here of the principal geographic area(s) concerned in this collection e.g. Ireland. Africa – please indicate relevant continent/s from the list provided.'
+description: 'Geographic area represented by this collection/Spatial coverage of items in the collection. Give an indication of the principal geographic area(s) concerned in this collection e.g. Ireland. Africa – please indicate relevant continent/s from the list provided.'
 required: false
 translatable: false
 default_value: {  }

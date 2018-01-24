@@ -21,4 +21,7 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'use text format faq'
   - 'use text format plain'
+  - 'view media'
+  - 'view the administration theme'

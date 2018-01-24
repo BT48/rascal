@@ -25,12 +25,15 @@ third_party_settings:
     allowed_formats:
       basic_html: basic_html
       full_html: full_html
+      faq: 0
       plain: 0
       restricted_html: 0
     default_order_toggle: 1
     default_order_wrapper:
       formats:
         basic_html:
+          weight: '0'
+        faq:
           weight: '0'
         plain:
           weight: '0'
@@ -43,7 +46,7 @@ field_name: field_strengths
 entity_type: node
 bundle: collection
 label: Strengths
-description: 'Please give an indication here of the principal strengths of this collection e.g. includes personal papers, diaries/includes detailed local information/particular emphasis on Ireland'
+description: 'An indication of the principal strengths of this collection e.g. includes personal papers, diaries or includes detailed local information or has a particular emphasis on Ireland.  '
 required: false
 translatable: false
 default_value: {  }

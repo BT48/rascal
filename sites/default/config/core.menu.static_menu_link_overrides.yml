@@ -1,6 +1,6 @@
 definitions:
   contact__site_page:
-    weight: -46
+    weight: -47
     menu_name: secondary
     parent: ''
     expanded: false
@@ -11,5 +11,17 @@ definitions:
     parent: ''
     expanded: false
     weight: -50
+  user__logout:
+    weight: -44
+    menu_name: secondary
+    parent: ''
+    expanded: false
+    enabled: true
+  user__page:
+    weight: -50
+    menu_name: secondary
+    parent: ''
+    expanded: false
+    enabled: true
 _core:
   default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM

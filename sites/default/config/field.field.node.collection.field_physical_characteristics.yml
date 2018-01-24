@@ -25,6 +25,7 @@ third_party_settings:
     allowed_formats:
       basic_html: basic_html
       plain: plain
+      faq: 0
       restricted_html: 0
       full_html: 0
     default_order_toggle: 1
@@ -38,12 +39,14 @@ third_party_settings:
           weight: '-8'
         plain:
           weight: '-7'
+        faq:
+          weight: '0'
 id: node.collection.field_physical_characteristics
 field_name: field_physical_characteristics
 entity_type: node
 bundle: collection
 label: 'Physical characteristics'
-description: ''
+description: 'Outline the physical or digital characteristics of the collection. You may include reference to the number of items, total duration and/or physical/digital space requirements e.g. size of collection (10 archive boxes or 2 linear meters), range of formats/format (manuscript letters, glass plates or digital images). Researchers will find it useful to have some idea of the extent of a collection and the types of materials it includes.'
 required: false
 translatable: false
 default_value: {  }

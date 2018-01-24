@@ -25,12 +25,6 @@ settings:
   provider: core
   label_display: '0'
 visibility:
-  other_facet:
-    id: other_facet
-    facets: ''
-    facet_value: ''
-    negate: false
-    context_mapping: {  }
   request_path:
     id: request_path
     pages: "user/login\r\nuser/pregister\r\nuser/password\r\nsignup"

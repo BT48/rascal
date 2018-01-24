@@ -11,7 +11,7 @@ field_name: field_subjects
 entity_type: node
 bundle: collection
 label: Subjects
-description: ''
+description: 'Indicate principal subject area(s) of this collection e.g. Music. Literature. Politics – please use checkbox to select relevant subject/s from the list provided. Select one or more options. This information allows users to filter or refine their search results.'
 required: false
 translatable: false
 default_value: {  }

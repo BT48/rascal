@@ -1,0 +1,36 @@
+uuid: 61d0c573-786f-4400-a588-0e34c2e26d84
+langcode: en
+status: false
+dependencies:
+  enforced:
+    module:
+      - slick
+_core:
+  default_config_hash: Zyx4BsKtbNFnRU7WTHAF0DGHMenI0b_Czn4dwl1bQTc
+id: slideshow
+name: slideshow
+label: Slideshow
+weight: -10
+group: ''
+skin: default
+breakpoints: 1
+optimized: true
+options:
+  options__active_tab: edit-options-responsives
+  settings:
+    centerMode: true
+    lazyLoad: ondemand
+    slidesPerRow: 3
+    slidesToShow: 3
+    swipeToSlide: true
+  responsives:
+    responsive:
+      -
+        breakpoint: 768
+        unslick: false
+        settings:
+          dots: true
+          infinite: false
+          swipeToSlide: true
+          touchMove: false
+          waitForAnimate: false

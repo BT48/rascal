@@ -24,6 +24,7 @@ third_party_settings:
     allowed_formats_toggle: 0
     allowed_formats:
       basic_html: basic_html
+      faq: 0
       plain: 0
       restricted_html: 0
       full_html: 0
@@ -38,12 +39,14 @@ third_party_settings:
           weight: '-8'
         full_html:
           weight: '-7'
+        faq:
+          weight: '0'
 id: node.collection.field_access_control
 field_name: field_access_control
 entity_type: node
 bundle: collection
-label: 'Access Control'
-description: ''
+label: Access
+description: 'Indicate any access restrictions on this collection e.g. is access restricted to a particular community (university staff & students, entry/admin charges etc You may copy appropriate text from existing descriptions if necessary e.g. The collection is available for reference only under supervised access in the Special Collections reading room.'
 required: false
 translatable: true
 default_value: {  }

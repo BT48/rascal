@@ -17,7 +17,7 @@ third_party_settings:
 id: loginlinks
 theme: rascal
 region: content
-weight: -8
+weight: 0
 provider: null
 plugin: 'block_content:f6be0b01-4453-4547-a8c4-0c8f13d6788d'
 settings:
@@ -29,12 +29,6 @@ settings:
   info: ''
   view_mode: full
 visibility:
-  other_facet:
-    id: other_facet
-    facets: ''
-    facet_value: ''
-    negate: false
-    context_mapping: {  }
   request_path:
     id: request_path
     pages: /user/login

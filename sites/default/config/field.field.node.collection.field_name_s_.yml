@@ -11,7 +11,7 @@ field_name: field_name_s_
 entity_type: node
 bundle: collection
 label: Name(s)
-description: 'Agent (person or corporate) name(s) associated with items in the collection e.g. Somerville Edith'
+description: 'Person or organisation name(s) associated with items in the collection e.g. Somerville Edith '
 required: false
 translatable: false
 default_value: {  }

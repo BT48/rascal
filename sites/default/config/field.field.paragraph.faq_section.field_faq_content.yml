@@ -1,0 +1,55 @@
+uuid: 8b33b509-fa71-4e48-b516-1e45314b740c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_faq_content
+    - paragraphs.paragraphs_type.faq_section
+  module:
+    - better_formats
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: parent_id
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+  better_formats:
+    allowed_formats_toggle: 1
+    allowed_formats:
+      faq: faq
+      full_html: full_html
+      basic_html: 0
+      plain: 0
+      restricted_html: 0
+    default_order_toggle: 0
+    default_order_wrapper:
+      formats:
+        basic_html:
+          weight: '-1'
+        faq:
+          weight: '0'
+        plain:
+          weight: '0'
+        restricted_html:
+          weight: '1'
+        full_html:
+          weight: '2'
+id: paragraph.faq_section.field_faq_content
+field_name: field_faq_content
+entity_type: paragraph
+bundle: faq_section
+label: Content
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

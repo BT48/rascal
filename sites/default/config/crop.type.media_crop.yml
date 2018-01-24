@@ -7,7 +7,7 @@ _core:
 label: Landscape
 id: media_crop
 description: 'Landscape crop'
-aspect_ratio: '16:9'
+aspect_ratio: '6:4'
 soft_limit_width: null
 soft_limit_height: null
 hard_limit_width: null

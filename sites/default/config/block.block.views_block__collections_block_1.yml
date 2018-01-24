@@ -1,6 +1,6 @@
 uuid: 67ee767b-4faa-4bb2-ad3e-28e6605b8c05
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.collections
@@ -16,7 +16,7 @@ third_party_settings:
 id: views_block__collections_block_1
 theme: rascal
 region: content_front
-weight: -11
+weight: -14
 provider: null
 plugin: 'views_block:collections-block_1'
 settings:
@@ -26,10 +26,4 @@ settings:
   label_display: visible
   views_label: ''
   items_per_page: none
-visibility:
-  other_facet:
-    id: other_facet
-    facets: ''
-    facet_value: ''
-    negate: false
-    context_mapping: {  }
+visibility: {  }

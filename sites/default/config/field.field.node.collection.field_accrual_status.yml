@@ -1,0 +1,25 @@
+uuid: 220c5282-1b59-4713-af8f-b3922da70398
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accrual_status
+    - node.type.collection
+  module:
+    - markup
+id: node.collection.field_accrual_status
+field_name: field_accrual_status
+entity_type: node
+bundle: collection
+label: 'Accrual Status'
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings:
+  markup:
+    value: "<p>Please provide an indication of any policy, method and periodicity of accrual to this collection.</p>\r\n"
+    format: plain
+field_type: markup

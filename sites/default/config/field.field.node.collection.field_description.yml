@@ -25,12 +25,15 @@ third_party_settings:
     allowed_formats:
       basic_html: basic_html
       full_html: full_html
+      faq: 0
       plain: 0
       restricted_html: 0
     default_order_toggle: 0
     default_order_wrapper:
       formats:
         basic_html:
+          weight: '0'
+        faq:
           weight: '0'
         plain:
           weight: '0'
@@ -43,7 +46,7 @@ field_name: field_description
 entity_type: node
 bundle: collection
 label: Description
-description: 'Please enter a summary of the collection here. Although subject specific information can be given, at least part of the description should be understandable by a researcher with no specialist knowledge of the collection. This text should include sufficient information to enable a researcher of any level decide if this collection is relevant to their research interest and if it merits consultation. The description should have relevant information (words and phrases) in the text which can be picked up if used during a KEYWORD search of RASCAL e.g. WWI, traditional, harp, China, travel writing'
+description: 'Enter a summary of the collection here. Although subject specific information can be given, at least part of the description should be understandable by a researcher with no specialist knowledge of the collection. This text should include sufficient information to enable a researcher of any level decide if this collection is relevant to their research interest and if it merits consultation. The description should have relevant information (keywords and phrases) in the text which will be picked up if used during a KEYWORD search of RASCAL e.g. WWI, traditional, harp, China, travel writing.'
 required: false
 translatable: false
 default_value: {  }

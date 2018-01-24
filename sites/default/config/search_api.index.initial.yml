@@ -17,7 +17,7 @@ dependencies:
     - field.storage.node.field_time_start
     - field.storage.node.field_content_start_int
     - field.storage.node.field_accumulation_start
-    - search_api.server.pantheon_solr
+    - search_api.server.localhost
   module:
     - node
     - taxonomy
@@ -182,21 +182,26 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
-  tokenizer:
+  entity_status: {  }
+  html_filter:
     fields:
       - rendered_item
       - title
       - description
       - summary
-    spaces: ''
-    overlap_cjk: 1
-    minimum_word_size: '3'
+    title: false
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
     weights:
-      preprocess_index: -6
-      preprocess_query: -6
+      preprocess_index: -15
+      preprocess_query: -15
   add_url: {  }
-  entity_status: {  }
-  rendered_item: {  }
+  aggregated_field: {  }
   transliteration:
     fields:
       - rendered_item
@@ -215,6 +220,16 @@ processor_settings:
     weights:
       preprocess_index: -20
       preprocess_query: -20
+  ignorecase:
+    fields:
+      - rendered_item
+      - title
+      - description
+      - summary
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  rendered_item: {  }
   highlight:
     highlight: always
     highlight_partial: true
@@ -225,33 +240,18 @@ processor_settings:
     suffix: '</b>'
     weights:
       postprocess_query: 0
-  html_filter:
+  tokenizer:
     fields:
       - rendered_item
       - title
       - description
       - summary
-    title: false
-    alt: true
-    tags:
-      h1: 5
-      h2: 3
-      h3: 2
-      strong: 2
-      b: 2
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
     weights:
-      preprocess_index: -15
-      preprocess_query: -15
-  ignorecase:
-    fields:
-      - rendered_item
-      - title
-      - description
-      - summary
-    weights:
-      preprocess_index: -20
-      preprocess_query: -20
-  aggregated_field: {  }
+      preprocess_index: -6
+      preprocess_query: -6
   stemmer:
     fields:
       - rendered_item
@@ -269,4 +269,4 @@ tracker_settings:
 options:
   index_directly: true
   cron_limit: 50
-server: pantheon_solr
+server: localhost

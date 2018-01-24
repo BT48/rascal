@@ -20,13 +20,13 @@ effects:
     id: image_scale
     weight: -9
     data:
-      width: 800
-      height: 450
+      width: 900
+      height: 600
       upscale: true
   6349e0e9-9d84-4e1c-8560-1748c901b5d8:
     uuid: 6349e0e9-9d84-4e1c-8560-1748c901b5d8
     id: image_scale_and_crop
     weight: 3
     data:
-      width: 800
-      height: 450
+      width: 900
+      height: 600

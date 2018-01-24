@@ -10,8 +10,8 @@ third_party_settings:
     parent: ''
 name: Collection
 type: collection
-description: '"A Collection containing rare or unique material or those which have attained a critical mass which would make it attractive and perhaps essential for a researcher to visit”. An aggregation of physical and/or electronic items.'
-help: ''
+description: "Special Collection defined as A Collection containing rare or unique material or those materials which have attained a critical mass which would make it attractive and perhaps essential for a researcher to visit. \r\nAn aggregation of physical and/or electronic items."
+help: "Special Collection defined as A Collection containing rare or unique material or those materials which have attained a critical mass which would make it attractive and perhaps essential for a researcher to visit. \r\n\r\nAn aggregation of physical and/or electronic items."
 new_revision: true
 preview_mode: 0
 display_submitted: false

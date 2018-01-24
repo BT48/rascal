@@ -1,0 +1,29 @@
+uuid: f9e35950-eb69-4cad-9b8a-55552a03279e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.institutions
+  module:
+    - block_class
+    - facets
+    - views
+  theme:
+    - rascal
+third_party_settings:
+  block_class:
+    classes: 'col-xs-24 featured'
+id: views_block__institutions_block_2
+theme: rascal
+region: content_front
+weight: 0
+provider: null
+plugin: 'views_block:institutions-block_2'
+settings:
+  id: 'views_block:institutions-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility: {  }

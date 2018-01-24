@@ -20,4 +20,11 @@ effects:
     data:
       width: 640
       height: 640
-      upscale: false
+      upscale: true
+  f9b2f8c5-5e71-4de7-9c33-b6780da6fa2e:
+    uuid: f9b2f8c5-5e71-4de7-9c33-b6780da6fa2e
+    id: image_scale_and_crop
+    weight: 3
+    data:
+      width: 640
+      height: 640

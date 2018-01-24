@@ -11,7 +11,7 @@ field_name: field_material_types
 entity_type: node
 bundle: collection
 label: 'Material Types'
-description: ''
+description: 'Select one or more options as is appropriate to the collection you are describing. This information facilitates the Browse section of the website.'
 required: false
 translatable: false
 default_value: {  }

@@ -11,7 +11,7 @@ field_name: field_languages
 entity_type: node
 bundle: collection
 label: Languages
-description: ''
+description: 'Select the language(s) represented within this collection from the pick menu'
 required: false
 translatable: false
 default_value: {  }

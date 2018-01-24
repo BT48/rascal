@@ -53,6 +53,12 @@ widgets:
       dropzone_description: 'Drag and drop files here to upload them'
       max_filesize: 100M
       extensions: 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'
+      clientside_resize: false
+      resize_width: 0
+      resize_height: 0
+      resize_quality: !!float 1
+      resize_method: contain
+      thumbnail_method: contain
       submit_text: 'Select images'
     uuid: 66a97d28-1c2c-4239-bb1a-7f67813dec7e
     weight: -10

@@ -3,7 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - search_api.index.initial
     - views.view.search
+  module:
+    - search_api
 id: collector
 name: Collector
 url_alias: collector
@@ -11,7 +14,7 @@ weight: 0
 show_only_one_result: false
 field_identifier: collector
 query_type_name: null
-facet_source_id: 'views_page:search__page_1'
+facet_source_id: 'search_api:views_page__search__page_1'
 widget:
   type: checkbox
   config:

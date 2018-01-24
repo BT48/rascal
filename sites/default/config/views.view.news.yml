@@ -199,7 +199,7 @@ display:
         type: normal
         title: News
         menu_name: secondary
-        weight: -47
+        weight: -48
     cache_metadata:
       max-age: -1
       contexts:

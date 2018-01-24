@@ -10,7 +10,7 @@ field_name: field_associated_collection
 entity_type: node
 bundle: collection
 label: 'Associated Collection'
-description: ''
+description: 'This is the Name of a second collection which is associated by Provenance with the collection you are currently describing. Only collections detailed in RASCAL can be referenced here. Search by title e.g. there is a Somerville & Ross Collection at Queen’s University Belfast and also at UCC.'
 required: false
 translatable: false
 default_value: {  }

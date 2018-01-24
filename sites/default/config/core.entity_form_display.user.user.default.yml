@@ -2,6 +2,8 @@ uuid: 1f8756f4-9abd-4b58-9479-331f9d508782
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.user.user.field_i_agree_to_the_terms_and_c
   module:
     - user
 _core:
@@ -16,6 +18,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_i_agree_to_the_terms_and_c:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
 hidden:
   contact: true
   language: true

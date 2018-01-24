@@ -20,6 +20,6 @@ default_value:
 default_value_callback: ''
 settings:
   markup:
-    value: 'Temporal coverage of items in the collection. This could be anything – e.g. 13th & 14th century manuscripts, or it could be 18th century i.e. the items refer to 18th century. Please use this format YYYY Information entered here will not necessarily be the same as the dates given in the next section'
+    value: "Temporal coverage of items in the collection. This could be anything – e.g. 13th & 14th century manuscripts, or it could be 18th century i.e. the items refer to 18th century. \r\nInformation entered here will not necessarily be the same as the dates given in the next section.\r\nPlease use this format YYYY"
     format: plain
 field_type: markup

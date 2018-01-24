@@ -5,10 +5,14 @@ dependencies:
   config:
     - facets.facet.subjects
   module:
+    - block_class
     - facets
     - system
   theme:
     - rascal
+third_party_settings:
+  block_class:
+    classes: ''
 id: subjects
 theme: rascal
 region: sidebar
@@ -21,14 +25,8 @@ settings:
   provider: facets
   label_display: visible
 visibility:
-  other_facet:
-    id: other_facet
-    facets: ''
-    facet_value: ''
-    negate: false
-    context_mapping: {  }
   request_path:
     id: request_path
-    pages: "/search\r\n/search*\r\n/search/*"
+    pages: "/search\r\n/search?*"
     negate: false
     context_mapping: {  }

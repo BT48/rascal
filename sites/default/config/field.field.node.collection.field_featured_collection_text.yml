@@ -24,6 +24,7 @@ third_party_settings:
     allowed_formats_toggle: 0
     allowed_formats:
       basic_html: basic_html
+      faq: 0
       plain: 0
       restricted_html: 0
       full_html: 0
@@ -31,6 +32,8 @@ third_party_settings:
     default_order_wrapper:
       formats:
         basic_html:
+          weight: '0'
+        faq:
           weight: '0'
         plain:
           weight: '0'
@@ -43,7 +46,7 @@ field_name: field_featured_collection_text
 entity_type: node
 bundle: collection
 label: Summary
-description: 'Please enter a very brief summary of the collection here, there is a character limit of 300 characters so two or three short sentences will be adequate. This information will be displayed in the Featured Collection section on the RASCAL home page. A different collection will be “featured” every time a user lands on that page.'
+description: "<p>A very brief summary of the collection, there is a character limit of 300 characters so two or three short sentences will be adequate. This information will be displayed in the Featured Collection section on the RASCAL home page. There will be an automated display of random featured collections and institutions with images attached. </p>\r\n<em>NOTE: Only collections or institutions with images uploaded will be harvested for the Featured Collections/Institutions on the RASCAL homepage.</em>\r\n"
 required: false
 translatable: false
 default_value: {  }

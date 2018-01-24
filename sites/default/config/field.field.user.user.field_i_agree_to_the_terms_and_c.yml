@@ -1,0 +1,24 @@
+uuid: ff11c0b5-e428-499d-923e-e691eb80cb96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_i_agree_to_the_terms_and_c
+  module:
+    - user
+id: user.user.field_i_agree_to_the_terms_and_c
+field_name: field_i_agree_to_the_terms_and_c
+entity_type: user
+bundle: user
+label: ' I Agree to comply with RASCAL Terms and Conditions of Use and Participation'
+description: '<a href="http://dev-rascal-qub.pantheonsite.io/sites/default/files/2017-07/rascal_terms.docx">View the full terms and conditions.</a>'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -17,7 +17,7 @@ dependencies:
     - field.field.node.institution.field_role
     - field.field.node.institution.field_telephone
     - field.field.node.institution.field_web_site
-    - image.style.media_crop
+    - image.style.square
     - node.type.institution
   module:
     - ds
@@ -116,9 +116,16 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_style: media_crop
+      image_style: square
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: minimal
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: image
     region: content
   field_telephone:

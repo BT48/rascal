@@ -25,12 +25,15 @@ third_party_settings:
     allowed_formats:
       plain: plain
       basic_html: 0
+      faq: 0
       restricted_html: 0
       full_html: 0
     default_order_toggle: 1
     default_order_wrapper:
       formats:
         basic_html:
+          weight: '0'
+        faq:
           weight: '0'
         plain:
           weight: '0'
@@ -43,7 +46,7 @@ field_name: field_custodial_history
 entity_type: node
 bundle: collection
 label: 'Custodial History'
-description: 'Please outline the custodial history of this collection highlighting any changes in ownership and custody that are significant for its authenticity, integrity and interpretation. This relates to provenance, it’s important to comment on this if it’s known as this can explain gaps, censorship and other anomalies that exist within a collection.'
+description: 'Outline the custodial history of this collection highlighting any changes in ownership and custody that are significant for its authenticity, integrity and interpretation. It is important to comment on the Provenance of the collection if this is known as it can help explain gaps, censorship and other anomalies that exist within a collection.'
 required: false
 translatable: false
 default_value: {  }

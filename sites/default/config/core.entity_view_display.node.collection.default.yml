@@ -8,12 +8,16 @@ dependencies:
     - field.field.node.collection.field_accrual_method
     - field.field.node.collection.field_accrual_periodicity
     - field.field.node.collection.field_accrual_policy
+    - field.field.node.collection.field_accrual_status
     - field.field.node.collection.field_accumulation_end
     - field.field.node.collection.field_accumulation_intro
     - field.field.node.collection.field_accumulation_start
     - field.field.node.collection.field_associated_collection
     - field.field.node.collection.field_associated_documentation
+    - field.field.node.collection.field_associated_documents
     - field.field.node.collection.field_collection_images
+    - field.field.node.collection.field_collection_link
+    - field.field.node.collection.field_collection_online
     - field.field.node.collection.field_collector
     - field.field.node.collection.field_content_end_int
     - field.field.node.collection.field_content_intro
@@ -42,9 +46,9 @@ dependencies:
   module:
     - ds
     - field_group
-    - file
-    - juicebox
+    - link
     - options
+    - slick
     - text
     - user
 third_party_settings:
@@ -55,29 +59,29 @@ third_party_settings:
         - field_custodial_history
         - field_note
         - group_accrual
-        - field_associated_documentation
+        - field_associated_documents
       parent_name: ''
       weight: 12
       format_type: details
       format_settings:
-        label: 'Detailed Information'
+        label: 'Custodial Information'
         id: ''
-        classes: ''
+        classes: clear
         open: false
-      label: 'Detailed Information'
+      label: 'Custodial Information'
     group_collection_dates:
       children:
         - group_created
         - group_collected
         - group_coverage
       parent_name: ''
-      weight: 13
+      weight: 10
       format_type: details
       format_settings:
+        label: 'Collection Dates'
         id: ''
-        classes: ''
+        classes: clear
         open: false
-        required_fields: false
       label: 'Collection Dates'
     group_accrual:
       children:
@@ -100,21 +104,21 @@ third_party_settings:
       label: Accrual
     group_categorisation:
       children:
-        - field_subjects
-        - field_material_types
-        - field_languages
-        - field_type
         - field_name_s_
+        - field_subjects
         - field_places
+        - field_languages
+        - field_material_types
+        - field_type
       parent_name: ''
       weight: 11
       format_type: details
       format_settings:
+        label: 'Additional Details'
         id: ''
-        classes: categorisation
+        classes: 'categorisation clear'
         open: false
-        required_fields: false
-      label: Categorisation
+      label: 'Additional Details'
     group_collected:
       children:
         - field_accumulation_start
@@ -169,56 +173,73 @@ third_party_settings:
         id: ''
         classes: 'created date col-xs-24 col-md-8'
       label: Created
+    group_hidden:
+      children: {  }
+      parent_name: ''
+      weight: 19
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: hidden
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Hidden
 id: node.collection.default
 targetEntityType: node
 bundle: collection
 mode: default
 content:
   addtoany:
-    weight: 19
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  content_moderation_control:
-    weight: 20
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   field_access_control:
-    weight: 14
+    weight: 13
     label: above
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: minimal
+          settings:
+            lb: Access
+            lb-col: false
+            classes: {  }
     type: text_default
     region: content
   field_accrual_general_statement:
-    weight: 24
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_accrual_method:
-    weight: 22
+    weight: 1
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_accrual_periodicity:
-    weight: 23
+    weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_accrual_policy:
-    weight: 21
-    label: inline
+    type: list_default
+    weight: 0
+    region: content
+    label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_default
-    region: content
   field_accumulation_end:
     weight: 30
     label: hidden
@@ -238,44 +259,96 @@ content:
     type: number_integer
     region: content
   field_associated_collection:
-    weight: 17
+    weight: 14
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_associated_documentation:
-    weight: 27
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: file_default
-    region: content
-  field_collection_images:
-    weight: 6
+  field_associated_documents:
+    weight: 28
     label: hidden
     settings:
-      image_style: juicebox_large
-      thumb_style: thumbnail
-      caption_source: alt
-      title_source: ''
-      jlib_galleryWidth: 437px
-      jlib_galleryHeight: 400px
-      jlib_backgroundColor: '#ECF0F1'
-      jlib_textColor: 'rgba(255,255,255,1)'
-      jlib_thumbFrameColor: 'rgba(255,255,255,.5)'
-      jlib_showExpandButton: true
-      jlib_useFullscreenExpand: '1'
-      jlib_useThumbDots: true
-      manual_config: ''
-      incompatible_file_action: show_icon_and_link
-      linkurl_source: ''
-      linkurl_target: _blank
-      custom_parent_classes: ''
-      jlib_showOpenButton: false
-      jlib_showThumbsButton: false
-      apply_markup_filter: true
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_collection_images:
+    weight: 5
+    label: hidden
+    settings:
+      style: ''
+      optionset: collection_images
+      optionset_thumbnail: ''
+      skin: ''
+      skin_thumbnail: ''
+      image_style: juicebox_small
+      thumbnail_style: ''
+      thumbnail_effect: ''
+      thumbnail_position: ''
+      media_switch: colorbox
+      box_style: juicebox_large
+      box_caption: title_alt
+      box_caption_custom: ''
+      ratio: ''
+      grid: null
+      grid_medium: null
+      grid_small: null
+      visible_items: null
+      layout: below
+      thumbnail_caption: ''
+      cache: 0
+      sizes: ''
+      breakpoints:
+        xs:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+        sm:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+        md:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+        lg:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+        xl:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+      current_view_mode: default
+      background: false
+      caption:
+        title: '0'
+        alt: '0'
+      grid_header: ''
+      preserve_keys: false
+      override: false
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      skin_arrows: ''
+      skin_dots: ''
+      iframe_lazy: true
+      icon: ''
+      view_mode: ''
+      box_media_style: ''
+      responsive_image_style: ''
     third_party_settings:
       ds:
         ds_limit: ''
@@ -285,10 +358,27 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: juicebox_formatter
+    type: slick_image
     region: content
+  field_collection_online:
+    type: boolean
+    weight: 18
+    region: content
+    label: hidden
+    settings:
+      format: custom
+      format_custom_true: 'Collection Available Online'
+      format_custom_false: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: minimal
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_collector:
-    weight: 2
+    weight: 1
     label: above
     settings:
       view_mode: sidebar_view_mode
@@ -322,28 +412,28 @@ content:
     type: text_default
     region: content
   field_description:
-    weight: 7
+    weight: 6
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_description_or_catalogue:
-    weight: 10
+    weight: 9
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_featured_collection_text:
-    weight: 5
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_identifier:
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
@@ -360,7 +450,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_languages:
-    weight: 14
+    weight: 4
     label: above
     settings:
       link: true
@@ -375,7 +465,7 @@ content:
     type: text_default
     region: content
   field_material_types:
-    weight: 13
+    weight: 5
     label: above
     settings:
       link: true
@@ -383,7 +473,7 @@ content:
     type: entity_reference_label
     region: content
   field_name_s_:
-    weight: 16
+    weight: 1
     label: above
     settings:
       link: true
@@ -398,7 +488,7 @@ content:
     type: text_default
     region: content
   field_owner:
-    weight: 3
+    weight: 2
     label: above
     settings:
       view_mode: sidebar_view_mode
@@ -407,14 +497,14 @@ content:
     type: entity_reference_entity_view
     region: content
   field_physical_characteristics:
-    weight: 9
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_places:
-    weight: 17
+    weight: 3
     label: above
     settings:
       link: true
@@ -422,14 +512,14 @@ content:
     type: entity_reference_label
     region: content
   field_strengths:
-    weight: 8
+    weight: 7
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_subjects:
-    weight: 12
+    weight: 2
     label: above
     settings:
       link: true
@@ -455,34 +545,30 @@ content:
     type: number_integer
     region: content
   field_type:
-    weight: 15
+    weight: 6
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  links:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  related_collections_entity_view_1:
-    weight: 16
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   related_collections_entity_view_2:
     weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   updated_information_entity_view_1:
-    weight: 18
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  content_moderation_control: true
+  field_accrual_status: true
   field_accumulation_intro: true
+  field_associated_documentation: true
+  field_collection_link: true
   field_content_intro: true
   field_times_intro: true
+  links: true
+  related_collections_entity_view_1: true

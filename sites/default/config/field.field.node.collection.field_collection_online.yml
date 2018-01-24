@@ -1,0 +1,23 @@
+uuid: 96401cec-d73d-47f1-b0dd-0069ef467113
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_collection_online
+    - node.type.collection
+id: node.collection.field_collection_online
+field_name: field_collection_online
+entity_type: node
+bundle: collection
+label: 'Collection Available Online'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

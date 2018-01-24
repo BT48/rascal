@@ -20,6 +20,6 @@ default_value:
 default_value_callback: ''
 settings:
   markup:
-    value: 'Please use this format YYYY Over what period of time were the materials collected? e.g. 1920'
+    value: "Over what period of time were the materials collected? e.g. 1920-1930 \r\nPlease use this format YYYY"
     format: plain
 field_type: markup

@@ -8,12 +8,16 @@ dependencies:
     - field.field.node.collection.field_accrual_method
     - field.field.node.collection.field_accrual_periodicity
     - field.field.node.collection.field_accrual_policy
+    - field.field.node.collection.field_accrual_status
     - field.field.node.collection.field_accumulation_end
     - field.field.node.collection.field_accumulation_intro
     - field.field.node.collection.field_accumulation_start
     - field.field.node.collection.field_associated_collection
     - field.field.node.collection.field_associated_documentation
+    - field.field.node.collection.field_associated_documents
     - field.field.node.collection.field_collection_images
+    - field.field.node.collection.field_collection_link
+    - field.field.node.collection.field_collection_online
     - field.field.node.collection.field_collector
     - field.field.node.collection.field_content_end_int
     - field.field.node.collection.field_content_intro
@@ -41,12 +45,13 @@ dependencies:
     - image.style.crop_thumbnail
     - node.type.collection
   module:
+    - conditional_fields
     - content_moderation
     - entity_browser_entity_form
     - field_group
-    - file
     - image_widget_crop
     - inline_entity_form
+    - link
     - markup
     - path
     - text
@@ -75,6 +80,7 @@ third_party_settings:
         - field_access_control
         - field_legal_status
         - field_custodial_history
+        - group_online_access
       parent_name: ''
       weight: 1
       format_type: details
@@ -146,6 +152,7 @@ third_party_settings:
       label: Time
     group_accrual:
       children:
+        - field_accrual_status
         - field_accrual_method
         - field_accrual_policy
         - field_accrual_periodicity
@@ -190,10 +197,9 @@ third_party_settings:
       label: Accumulation
     group_miscellaneous:
       children:
-        - field_associated_documentation
+        - field_associated_documents
         - field_associated_collection
         - field_note
-        - field_type
       parent_name: ''
       weight: 6
       format_type: details
@@ -203,6 +209,19 @@ third_party_settings:
         open: false
         required_fields: true
       label: Miscellaneous
+    group_online_access:
+      children:
+        - field_collection_online
+        - field_collection_link
+      parent_name: group_ownership_access
+      weight: 7
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: 'Online Access'
 id: node.collection.default
 targetEntityType: node
 bundle: collection
@@ -231,7 +250,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_accrual_method:
-    type: options_select
+    type: options_buttons
     weight: 1
     region: content
     settings: {  }
@@ -248,6 +267,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_accrual_status:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
+    region: content
   field_accumulation_end:
     type: number
     weight: 3
@@ -277,13 +302,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_associated_documentation:
-    type: file_generic
+  field_associated_documents:
     weight: 1
-    region: content
     settings:
-      progress_indicator: throbber
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
+    type: link_default
+    region: content
   field_collection_images:
     type: image_widget_crop
     weight: 38
@@ -299,6 +325,38 @@ content:
       progress_indicator: throbber
       show_crop_area: false
     third_party_settings: {  }
+  field_collection_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings:
+      conditional_fields:
+        29ca28c2-bffc-47de-9dba-7c389264d098:
+          dependee: field_collection_online
+          settings:
+            state: visible
+            condition: checked
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              value: false
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: collection
+    type: link_default
+    region: content
+  field_collection_online:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_collector:
     type: inline_entity_form_complex
     weight: 3
@@ -486,15 +544,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_type:
-    type: entity_reference_autocomplete
-    weight: 4
-    region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   path:
     type: path
     weight: 60
@@ -532,4 +581,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_associated_documentation: true
+  field_type: true

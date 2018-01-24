@@ -12,7 +12,7 @@ field_name: field_associated_documentation
 entity_type: node
 bundle: collection
 label: 'Associated Documentation'
-description: 'You may have documents related to this collection which you wish to make available online here. All documents must be accessible by URL from your own web server/site. Where possible the URL should link to a PDF. You must consider IPR as you will be confirming responsibility for it below. There are no restrictions on the number of URLs that can be added'
+description: "<p>You may have documents related to this collection which you wish to make available online here. All documents must be accessible by URL from your own web server/site.</p>\r\nWhere possible the URL should link to a PDF. You must consider IPR* as you will be confirming responsibility for it below. There are no restrictions on the number of URLs that can be added.</p>\r\n\r\n*Please ensure copyright compliance before making any documents available for upload, this is your responsibility."
 required: false
 translatable: false
 default_value: {  }

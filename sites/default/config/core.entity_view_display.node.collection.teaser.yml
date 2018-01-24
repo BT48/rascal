@@ -9,12 +9,16 @@ dependencies:
     - field.field.node.collection.field_accrual_method
     - field.field.node.collection.field_accrual_periodicity
     - field.field.node.collection.field_accrual_policy
+    - field.field.node.collection.field_accrual_status
     - field.field.node.collection.field_accumulation_end
     - field.field.node.collection.field_accumulation_intro
     - field.field.node.collection.field_accumulation_start
     - field.field.node.collection.field_associated_collection
     - field.field.node.collection.field_associated_documentation
+    - field.field.node.collection.field_associated_documents
     - field.field.node.collection.field_collection_images
+    - field.field.node.collection.field_collection_link
+    - field.field.node.collection.field_collection_online
     - field.field.node.collection.field_collector
     - field.field.node.collection.field_content_end_int
     - field.field.node.collection.field_content_intro
@@ -205,6 +209,9 @@ content:
             fis: false
             fis-def-at: false
             fi-def-at: false
+  updated_information_entity_view_1:
+    weight: 10
+    region: content
 hidden:
   addtoany: true
   content_moderation_control: true
@@ -213,11 +220,15 @@ hidden:
   field_accrual_method: true
   field_accrual_periodicity: true
   field_accrual_policy: true
+  field_accrual_status: true
   field_accumulation_end: true
   field_accumulation_intro: true
   field_accumulation_start: true
   field_associated_collection: true
   field_associated_documentation: true
+  field_associated_documents: true
+  field_collection_link: true
+  field_collection_online: true
   field_collector: true
   field_content_end_int: true
   field_content_intro: true

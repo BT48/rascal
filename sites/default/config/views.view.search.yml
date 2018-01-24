@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_accumulation_end
     - field.storage.node.field_accumulation_start
+    - field.storage.node.field_collection_online
     - field.storage.node.field_content_end_int
     - field.storage.node.field_content_start_int
     - field.storage.node.field_description
@@ -15,9 +16,11 @@ dependencies:
     - search_api.index.initial
     - system.menu.secondary
   module:
+    - better_exposed_filters
     - search_api
     - smart_trim
     - text
+    - views_autocomplete_filters
 id: search
 label: Search
 module: views
@@ -240,6 +243,81 @@ display:
               page:
                 display_method: label
                 view_mode: default
+          entity_type: node
+          plugin_id: search_api_field
+        field_collection_online:
+          id: field_collection_online
+          table: search_api_datasource_initial_entity_node
+          field: field_collection_online
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: custom
+            format_custom_true: 'Collection Available Online'
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_boolean
+          fallback_options:
+            type: yes-no
+            type_custom_true: ''
+            type_custom_false: ''
+            not: false
+            link_to_item: false
+            multi_separator: ', '
           entity_type: node
           plugin_id: search_api_field
         field_description:
@@ -995,6 +1073,12 @@ display:
               editor: '0'
               site_admin: '0'
               organisation: '0'
+            autocomplete_filter: 0
+            autocomplete_min_chars: '3'
+            autocomplete_items: '10'
+            autocomplete_raw_suggestion: 1
+            autocomplete_raw_dropdown: 1
+            autocomplete_dependent: 0
           is_grouped: false
           group_info:
             label: ''
@@ -1086,6 +1170,7 @@ display:
       tags:
         - 'config:field.storage.node.field_accumulation_end'
         - 'config:field.storage.node.field_accumulation_start'
+        - 'config:field.storage.node.field_collection_online'
         - 'config:field.storage.node.field_content_end_int'
         - 'config:field.storage.node.field_content_start_int'
         - 'config:field.storage.node.field_description'
@@ -1107,10 +1192,36 @@ display:
         description: ''
         expanded: false
         parent: ''
-        weight: -50
+        weight: -49
         context: '0'
         menu_name: secondary
       exposed_block: true
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: 'Your search returned <strong>@total</strong> results. Displaying @start - @end.'
+          plugin_id: result
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<p>Not able to find what you''re looking for? <a href="/search/advanced">Try our advanced search</a>.</p>'
+            format: basic_html
+          plugin_id: text
+      defaults:
+        header: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -1123,6 +1234,385 @@ display:
       tags:
         - 'config:field.storage.node.field_accumulation_end'
         - 'config:field.storage.node.field_accumulation_start'
+        - 'config:field.storage.node.field_collection_online'
+        - 'config:field.storage.node.field_content_end_int'
+        - 'config:field.storage.node.field_content_start_int'
+        - 'config:field.storage.node.field_description'
+        - 'config:field.storage.node.field_featured_collection_text'
+        - 'config:field.storage.node.field_institution_ref'
+        - 'config:field.storage.node.field_time_end'
+        - 'config:field.storage.node.field_time_start'
+  page_2:
+    display_plugin: page
+    id: page_2
+    display_title: Page
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: search/advanced
+      menu:
+        type: none
+        title: Search
+        description: ''
+        expanded: false
+        parent: ''
+        weight: -50
+        context: '0'
+        menu_name: secondary
+      exposed_block: false
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Search
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: 'A - Z'
+          sort_desc_label: 'Z - A'
+          bef:
+            general:
+              allow_secondary: true
+              secondary_label: 'Advanced options'
+              autosubmit: false
+              autosubmit_hide: false
+            sort:
+              bef_format: default
+              advanced:
+                collapsible: false
+                collapsible_label: 'Sort options'
+                combine: false
+                combine_rewrite: ''
+                reset: false
+                reset_label: ''
+                is_secondary: false
+            search_api_fulltext:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+            institution:
+              bef_format: default
+              more_options:
+                is_secondary: true
+                rewrite:
+                  filter_rewrite_values: ''
+            languages:
+              bef_format: default
+              more_options:
+                is_secondary: true
+                rewrite:
+                  filter_rewrite_values: ''
+            names:
+              bef_format: default
+              more_options:
+                is_secondary: true
+                rewrite:
+                  filter_rewrite_values: ''
+            places:
+              bef_format: default
+              more_options:
+                is_secondary: true
+                rewrite:
+                  filter_rewrite_values: ''
+            subjects:
+              bef_format: default
+              more_options:
+                is_secondary: true
+                rewrite:
+                  filter_rewrite_values: ''
+      defaults:
+        exposed_form: false
+        title: false
+        filters: false
+        filter_groups: false
+        css_class: false
+      title: 'Advanced Search'
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_initial
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: and
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'Search terms'
+            description: ''
+            use_operator: true
+            operator: search_api_fulltext_op
+            identifier: search_api_fulltext
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              site_admin: '0'
+              organisation: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields:
+            rendered_item: rendered_item
+          plugin_id: search_api_fulltext
+        institution:
+          id: institution
+          table: search_api_index_initial
+          field: institution
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: institution_op
+            label: Institution
+            description: ''
+            use_operator: false
+            operator: institution_op
+            identifier: institution
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              site_admin: '0'
+              organisation: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_string
+        languages:
+          id: languages
+          table: search_api_index_initial
+          field: languages
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: languages_op
+            label: Language
+            description: ''
+            use_operator: false
+            operator: languages_op
+            identifier: languages
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              site_admin: '0'
+              organisation: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_string
+        names:
+          id: names
+          table: search_api_index_initial
+          field: names
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: names_op
+            label: People
+            description: ''
+            use_operator: false
+            operator: names_op
+            identifier: names
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              site_admin: '0'
+              organisation: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_string
+        places:
+          id: places
+          table: search_api_index_initial
+          field: places
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: places_op
+            label: Places
+            description: ''
+            use_operator: false
+            operator: places_op
+            identifier: places
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              site_admin: '0'
+              organisation: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_string
+        subjects:
+          id: subjects
+          table: search_api_index_initial
+          field: subjects
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: subjects_op
+            label: Subject
+            description: ''
+            use_operator: false
+            operator: subjects_op
+            identifier: subjects
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              site_admin: '0'
+              organisation: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_string
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      css_class: view-search-advanced
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
+      tags:
+        - 'config:field.storage.node.field_accumulation_end'
+        - 'config:field.storage.node.field_accumulation_start'
+        - 'config:field.storage.node.field_collection_online'
         - 'config:field.storage.node.field_content_end_int'
         - 'config:field.storage.node.field_content_start_int'
         - 'config:field.storage.node.field_description'
